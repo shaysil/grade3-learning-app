@@ -2,11 +2,14 @@
   "name": "grade3-learning-app",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+  "homepage": "https://shaysil.github.io/grade3-learning-app/",
+    "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\""
+    
   },
   "dependencies": {
     "react": "^18.2.0",
