@@ -22,8 +22,7 @@ export default function Welcome({ onStart }) {
         <input placeholder="מה השם שלך?" value={name} onChange={e=>setName(e.target.value)} />
         <button className="big primary" onClick={start}>התחל</button>
       </div>
-
-      <div className="help">Tip: Tap the big button to start — the app will play audio automatically</div>
+      
     </div>
   )
 }
