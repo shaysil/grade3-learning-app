@@ -1,0 +1,1 @@
+Place avatar PNG/SVG images here (e.g., kid1.png, robot1.svg). Avatars unlock via achievements. Example filenames: avatar_fox.png, avatar_robot.png

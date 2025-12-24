@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff6b6b" />
+    <title>לומדים כיתה ג׳ — Grade 3 Learning</title>
+    <script type="module" crossorigin src="/assets/index-B2DzBPgC.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CgHLFdGy.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Inline debug overlay (always visible, inline styles so app CSS won't hide it)
+      (function(){
+        try{
+          const d = document.createElement('div')
+          d.id = 'debug-overlay'
+          d.style.position = 'fixed'
+          d.style.left = '8px'
+          d.style.top = '8px'
+          d.style.zIndex = 99999
+          d.style.background = 'linear-gradient(90deg,#fff,#fff)'
+          d.style.padding = '6px'
+          d.style.borderRadius = '8px'
+          d.style.boxShadow = '0 6px 18px rgba(16,24,40,0.08)'
+          d.innerHTML = '<button id="dbg-btn" style="font-size:12px;padding:6px;border-radius:8px">Debug</button>'
+          document.body.appendChild(d)
+          document.getElementById('dbg-btn').onclick = function(){
+            const rootExists = !!document.getElementById('root')
+            const buttons = Array.from(document.querySelectorAll('button'))
+            console.log('DEBUG OVERLAY: root exists =', rootExists, 'buttonCount=', buttons.length)
+            buttons.forEach((b,i)=> console.log('btn', i, b.innerText, b.className))
+            alert('Debug: check Console — root=' + rootExists + ', buttons=' + buttons.length)
+          }
+        }catch(e){console.error(e)}
+      })()
+    </script>
+  </body>
+</html>

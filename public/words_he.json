@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 1,
+    "text": "אמא",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אמא_he.mp3",
+    "sentence_audio_url": "hebSentences/אמא_מכינה_לי_ארוחת_בוקר_כל_יום__he.mp3",
+    "options": [
+      "אמא",
+      "אבא",
+      "אחות",
+      "אח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 2,
+    "text": "אבא",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אבא_he.mp3",
+    "sentence_audio_url": "hebSentences/אבא_לוקח_אותי_לבית_הספר_בבוקר__he.mp3",
+    "options": [
+      "אבא",
+      "אמא",
+      "אחות",
+      "אח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 3,
+    "text": "אחות",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אחות_he.mp3",
+    "sentence_audio_url": "hebSentences/האחות_שלי_משחקת_איתי_בבית__he.mp3",
+    "options": [
+      "אחות",
+      "אמא",
+      "אבא",
+      "אח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 4,
+    "text": "אח",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אח_he.mp3",
+    "sentence_audio_url": "hebSentences/האח_שלי_אוהב_לשחק_בכדור__he.mp3",
+    "options": [
+      "אח",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 5,
+    "text": "סבתא",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/סבתא_he.mp3",
+    "sentence_audio_url": "hebSentences/סבתא_מספרת_לי_סיפור_לפני_השינה__he.mp3",
+    "options": [
+      "סבתא",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 6,
+    "text": "סבא",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/סבא_he.mp3",
+    "sentence_audio_url": "hebSentences/סבא_הולך_איתי_לטיול_בפארק__he.mp3",
+    "options": [
+      "סבא",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 7,
+    "text": "דודה",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/דודה_he.mp3",
+    "sentence_audio_url": "hebSentences/דודה_באה_לבקר_אותנו_בשבת__he.mp3",
+    "options": [
+      "דודה",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 8,
+    "text": "דוד",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/דוד_he.mp3",
+    "sentence_audio_url": "hebSentences/דוד_משחק_איתי_כדורגל__he.mp3",
+    "options": [
+      "דוד",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 9,
+    "text": "תינוק",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/תינוק_he.mp3",
+    "sentence_audio_url": "hebSentences/התינוק_ישן_במיטה_שלו__he.mp3",
+    "options": [
+      "תינוק",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 10,
+    "text": "חבר",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/חבר_he.mp3",
+    "sentence_audio_url": "hebSentences/החבר_שלי_יושב_לידי_בכיתה__he.mp3",
+    "options": [
+      "חבר",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 11,
+    "text": "חברה",
+    "category": "משפחה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/חברה_he.mp3",
+    "sentence_audio_url": "hebSentences/החברה_שלי_עוזרת_לי_בשיעורים__he.mp3",
+    "options": [
+      "חברה",
+      "אמא",
+      "אבא",
+      "אחות"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 12,
+    "text": "שולחן",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/שולחן_he.mp3",
+    "sentence_audio_url": "hebSentences/השולחן_עומד_באמצע_החדר__he.mp3",
+    "options": [
+      "שולחן",
+      "כיסא",
+      "דלת",
+      "חלון"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 13,
+    "text": "כיסא",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כיסא_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_יושב_על_כיסא_בכיתה__he.mp3",
+    "options": [
+      "כיסא",
+      "שולחן",
+      "דלת",
+      "חלון"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 14,
+    "text": "דלת",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/דלת_he.mp3",
+    "sentence_audio_url": "hebSentences/הדלת_סגורה_עכשיו__he.mp3",
+    "options": [
+      "דלת",
+      "שולחן",
+      "כיסא",
+      "חלון"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 15,
+    "text": "חלון",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/חלון_he.mp3",
+    "sentence_audio_url": "hebSentences/החלון_פתוח_והאוויר_נכנס__he.mp3",
+    "options": [
+      "חלון",
+      "שולחן",
+      "כיסא",
+      "דלת"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 16,
+    "text": "מיטה",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מיטה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_הולך_לישון_במיטה__he.mp3",
+    "options": [
+      "מיטה",
+      "שולחן",
+      "כיסא",
+      "דלת"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 17,
+    "text": "ארון",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ארון_he.mp3",
+    "sentence_audio_url": "hebSentences/הבגדים_נמצאים_בארון__he.mp3",
+    "options": [
+      "ארון",
+      "שולחן",
+      "כיסא",
+      "דלת"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 18,
+    "text": "תיק",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/תיק_he.mp3",
+    "sentence_audio_url": "hebSentences/התיק_שלי_מוכן_לבית_הספר__he.mp3",
+    "options": [
+      "תיק",
+      "שולחן",
+      "כיסא",
+      "דלת"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 19,
+    "text": "מחברת",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מחברת_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_כותב_במחברת_שלי__he.mp3",
+    "options": [
+      "מחברת",
+      "שולחן",
+      "כיסא",
+      "דלת"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 20,
+    "text": "עיפרון",
+    "category": "בית וחפצים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עיפרון_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_כותב_בעיפרון__he.mp3",
+    "options": [
+      "עיפרון",
+      "שולחן",
+      "כיסא",
+      "דלת"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 21,
+    "text": "כיתה",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כיתה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_לומד_בכיתה_ג__he.mp3",
+    "options": [
+      "כיתה",
+      "מורה",
+      "תלמיד",
+      "לוח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 22,
+    "text": "מורה",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מורה_he.mp3",
+    "sentence_audio_url": "hebSentences/המורה_מסבירה_את_השיעור__he.mp3",
+    "options": [
+      "מורה",
+      "כיתה",
+      "תלמיד",
+      "לוח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 23,
+    "text": "תלמיד",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/תלמיד_he.mp3",
+    "sentence_audio_url": "hebSentences/התלמיד_מקשיב_למורה__he.mp3",
+    "options": [
+      "תלמיד",
+      "כיתה",
+      "מורה",
+      "לוח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 24,
+    "text": "לוח",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/לוח_he.mp3",
+    "sentence_audio_url": "hebSentences/המורה_כותבת_על_הלוח__he.mp3",
+    "options": [
+      "לוח",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 25,
+    "text": "מחק",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מחק_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מוחק_טעות_עם_מחק__he.mp3",
+    "options": [
+      "מחק",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 26,
+    "text": "שיעור",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/שיעור_he.mp3",
+    "sentence_audio_url": "hebSentences/השיעור_מתחיל_בבוקר__he.mp3",
+    "options": [
+      "שיעור",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 27,
+    "text": "מבחן",
+    "category": "בית ספר",
+    "difficulty": "medium",
+    "audio_url": "hebWords/מבחן_he.mp3",
+    "sentence_audio_url": "hebSentences/יש_לנו_מבחן_מחר__he.mp3",
+    "options": [
+      "מבחן",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 28,
+    "text": "הפסקה",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/הפסקה_he.mp3",
+    "sentence_audio_url": "hebSentences/בהפסקה_אנחנו_משחקים__he.mp3",
+    "options": [
+      "הפסקה",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 29,
+    "text": "ילקוט",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ילקוט_he.mp3",
+    "sentence_audio_url": "hebSentences/הילקוט_על_הגב_שלי__he.mp3",
+    "options": [
+      "ילקוט",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 30,
+    "text": "עט",
+    "category": "בית ספר",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עט_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_כותב_בעט_כחול__he.mp3",
+    "options": [
+      "עט",
+      "כיתה",
+      "מורה",
+      "תלמיד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 31,
+    "text": "אוכל",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אוכל_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוכל_ארוחת_צהריים__he.mp3",
+    "options": [
+      "אוכל",
+      "שותה",
+      "כותב",
+      "קורא"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 32,
+    "text": "שותה",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/שותה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_שותה_מים_קרים__he.mp3",
+    "options": [
+      "שותה",
+      "אוכל",
+      "כותב",
+      "קורא"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 33,
+    "text": "כותב",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כותב_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_כותב_משפט_במחברת__he.mp3",
+    "options": [
+      "כותב",
+      "אוכל",
+      "שותה",
+      "קורא"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 34,
+    "text": "קורא",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/קורא_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_קורא_ספר_מעניין__he.mp3",
+    "options": [
+      "קורא",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 35,
+    "text": "הולך",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/הולך_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_הולך_לבית_הספר__he.mp3",
+    "options": [
+      "הולך",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 36,
+    "text": "רץ",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/רץ_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_רץ_בחצר__he.mp3",
+    "options": [
+      "רץ",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 37,
+    "text": "יושב",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/יושב_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_יושב_ליד_השולחן__he.mp3",
+    "options": [
+      "יושב",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 38,
+    "text": "עומד",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עומד_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_עומד_בתור__he.mp3",
+    "options": [
+      "עומד",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 39,
+    "text": "מקשיב",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מקשיב_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מקשיב_למה_שהמורה_אומרת__he.mp3",
+    "options": [
+      "מקשיב",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 40,
+    "text": "מדבר",
+    "category": "פעולות יומיומיות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מדבר_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מדבר_עם_חברים__he.mp3",
+    "options": [
+      "מדבר",
+      "אוכל",
+      "שותה",
+      "כותב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 41,
+    "text": "שמח",
+    "category": "רגשות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/שמח_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_שמח_לשחק_עם_חברים__he.mp3",
+    "options": [
+      "שמח",
+      "עצוב",
+      "כועס",
+      "מפחד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 42,
+    "text": "עצוב",
+    "category": "רגשות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עצוב_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_עצוב_כשהמשחק_נגמר__he.mp3",
+    "options": [
+      "עצוב",
+      "שמח",
+      "כועס",
+      "מפחד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 43,
+    "text": "כועס",
+    "category": "רגשות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כועס_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_כועס_כשלא_מצליח__he.mp3",
+    "options": [
+      "כועס",
+      "שמח",
+      "עצוב",
+      "מפחד"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 44,
+    "text": "מפחד",
+    "category": "רגשות",
+    "difficulty": "medium",
+    "audio_url": "hebWords/מפחד_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מפחד_בחושך__he.mp3",
+    "options": [
+      "מפחד",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 45,
+    "text": "רגוע",
+    "category": "רגשות",
+    "difficulty": "medium",
+    "audio_url": "hebWords/רגוע_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_רגוע_כשאני_בבית__he.mp3",
+    "options": [
+      "רגוע",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 46,
+    "text": "מתרגש",
+    "category": "רגשות",
+    "difficulty": "medium",
+    "audio_url": "hebWords/מתרגש_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מתרגש_לפני_טיול__he.mp3",
+    "options": [
+      "מתרגש",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 47,
+    "text": "מופתע",
+    "category": "רגשות",
+    "difficulty": "medium",
+    "audio_url": "hebWords/מופתע_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מופתע_מהמתנה__he.mp3",
+    "options": [
+      "מופתע",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 48,
+    "text": "גאה",
+    "category": "רגשות",
+    "difficulty": "medium",
+    "audio_url": "hebWords/גאה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_גאה_בהצלחה_שלי__he.mp3",
+    "options": [
+      "גאה",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 49,
+    "text": "ביישן",
+    "category": "רגשות",
+    "difficulty": "medium",
+    "audio_url": "hebWords/ביישן_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_ביישן_מול_אנשים_חדשים__he.mp3",
+    "options": [
+      "ביישן",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 50,
+    "text": "עייף",
+    "category": "רגשות",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עייף_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_עייף_בסוף_היום__he.mp3",
+    "options": [
+      "עייף",
+      "שמח",
+      "עצוב",
+      "כועס"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 51,
+    "text": "שמש",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/שמש_he.mp3",
+    "sentence_audio_url": "hebSentences/השמש_זורחת_בבוקר__he.mp3",
+    "options": [
+      "שמש",
+      "ירח",
+      "כוכב",
+      "עץ"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 52,
+    "text": "ירח",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ירח_he.mp3",
+    "sentence_audio_url": "hebSentences/הירח_נראה_בלילה__he.mp3",
+    "options": [
+      "ירח",
+      "שמש",
+      "כוכב",
+      "עץ"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 53,
+    "text": "כוכב",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כוכב_he.mp3",
+    "sentence_audio_url": "hebSentences/כוכב_מנצנץ_בשמיים__he.mp3",
+    "options": [
+      "כוכב",
+      "שמש",
+      "ירח",
+      "עץ"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 54,
+    "text": "עץ",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עץ_he.mp3",
+    "sentence_audio_url": "hebSentences/העץ_גבוה_וירוק__he.mp3",
+    "options": [
+      "עץ",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 55,
+    "text": "פרח",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/פרח_he.mp3",
+    "sentence_audio_url": "hebSentences/הפרח_יפה_וצבעוני__he.mp3",
+    "options": [
+      "פרח",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 56,
+    "text": "דשא",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/דשא_he.mp3",
+    "sentence_audio_url": "hebSentences/הדשא_ירוק_ורך__he.mp3",
+    "options": [
+      "דשא",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 57,
+    "text": "גשם",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/גשם_he.mp3",
+    "sentence_audio_url": "hebSentences/יורד_גשם_בחורף__he.mp3",
+    "options": [
+      "גשם",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 58,
+    "text": "רוח",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/רוח_he.mp3",
+    "sentence_audio_url": "hebSentences/הרוח_נושבת_חזק__he.mp3",
+    "options": [
+      "רוח",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 59,
+    "text": "ים",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ים_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוהב_לשחות_בים__he.mp3",
+    "options": [
+      "ים",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 60,
+    "text": "הר",
+    "category": "טבע וסביבה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/הר_he.mp3",
+    "sentence_audio_url": "hebSentences/ההר_גבוה_מאוד__he.mp3",
+    "options": [
+      "הר",
+      "שמש",
+      "ירח",
+      "כוכב"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 61,
+    "text": "כלב",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כלב_he.mp3",
+    "sentence_audio_url": "hebSentences/הכלב_רץ_אחרי_הכדור__he.mp3",
+    "options": [
+      "כלב",
+      "חתול",
+      "ציפור",
+      "דג"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 62,
+    "text": "חתול",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/חתול_he.mp3",
+    "sentence_audio_url": "hebSentences/החתול_ישן_על_הספה__he.mp3",
+    "options": [
+      "חתול",
+      "כלב",
+      "ציפור",
+      "דג"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 63,
+    "text": "ציפור",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ציפור_he.mp3",
+    "sentence_audio_url": "hebSentences/הציפור_עפה_בשמיים__he.mp3",
+    "options": [
+      "ציפור",
+      "כלב",
+      "חתול",
+      "דג"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 64,
+    "text": "דג",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/דג_he.mp3",
+    "sentence_audio_url": "hebSentences/הדג_שוחה_במים__he.mp3",
+    "options": [
+      "דג",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 65,
+    "text": "סוס",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/סוס_he.mp3",
+    "sentence_audio_url": "hebSentences/הסוס_רץ_בשדה__he.mp3",
+    "options": [
+      "סוס",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 66,
+    "text": "פרה",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/פרה_he.mp3",
+    "sentence_audio_url": "hebSentences/הפרה_אוכלת_עשב__he.mp3",
+    "options": [
+      "פרה",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 67,
+    "text": "כבשה",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כבשה_he.mp3",
+    "sentence_audio_url": "hebSentences/הכבשה_הולכת_עם_העדר__he.mp3",
+    "options": [
+      "כבשה",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 68,
+    "text": "תרנגול",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/תרנגול_he.mp3",
+    "sentence_audio_url": "hebSentences/התרנגול_קורא_בבוקר__he.mp3",
+    "options": [
+      "תרנגול",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 69,
+    "text": "אריה",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אריה_he.mp3",
+    "sentence_audio_url": "hebSentences/האריה_חזק_מאוד__he.mp3",
+    "options": [
+      "אריה",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 70,
+    "text": "פיל",
+    "category": "בעלי חיים",
+    "difficulty": "easy",
+    "audio_url": "hebWords/פיל_he.mp3",
+    "sentence_audio_url": "hebSentences/הפיל_גדול_וחזק__he.mp3",
+    "options": [
+      "פיל",
+      "כלב",
+      "חתול",
+      "ציפור"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 71,
+    "text": "לחם",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/לחם_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוכל_לחם_בבוקר__he.mp3",
+    "options": [
+      "לחם",
+      "חלב",
+      "גבינה",
+      "תפוח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 72,
+    "text": "חלב",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/חלב_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_שותה_חלב__he.mp3",
+    "options": [
+      "חלב",
+      "לחם",
+      "גבינה",
+      "תפוח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 73,
+    "text": "גבינה",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/גבינה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוכל_גבינה__he.mp3",
+    "options": [
+      "גבינה",
+      "לחם",
+      "חלב",
+      "תפוח"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 74,
+    "text": "תפוח",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/תפוח_he.mp3",
+    "sentence_audio_url": "hebSentences/התפוח_אדום_וטעים__he.mp3",
+    "options": [
+      "תפוח",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 75,
+    "text": "בננה",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/בננה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוהב_לאכול_בננה__he.mp3",
+    "options": [
+      "בננה",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 76,
+    "text": "עוגה",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עוגה_he.mp3",
+    "sentence_audio_url": "hebSentences/העוגה_מתוקה_וטעימה__he.mp3",
+    "options": [
+      "עוגה",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 77,
+    "text": "מרק",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מרק_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוכל_מרק_חם__he.mp3",
+    "options": [
+      "מרק",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 78,
+    "text": "אורז",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אורז_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוכל_אורז_בצהריים__he.mp3",
+    "options": [
+      "אורז",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 79,
+    "text": "ביצה",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ביצה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_אוכל_ביצה_בבוקר__he.mp3",
+    "options": [
+      "ביצה",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 80,
+    "text": "מים",
+    "category": "אוכל",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מים_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_שותה_מים__he.mp3",
+    "options": [
+      "מים",
+      "לחם",
+      "חלב",
+      "גבינה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 81,
+    "text": "אוטובוס",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אוטובוס_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_נוסע_באוטובוס_לבית_הספר__he.mp3",
+    "options": [
+      "אוטובוס",
+      "רכבת",
+      "אופניים",
+      "מכונית"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 82,
+    "text": "רכבת",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/רכבת_he.mp3",
+    "sentence_audio_url": "hebSentences/הרכבת_נוסעת_מהר__he.mp3",
+    "options": [
+      "רכבת",
+      "אוטובוס",
+      "אופניים",
+      "מכונית"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 83,
+    "text": "אופניים",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אופניים_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_רוכב_על_אופניים__he.mp3",
+    "options": [
+      "אופניים",
+      "אוטובוס",
+      "רכבת",
+      "מכונית"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 84,
+    "text": "מכונית",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מכונית_he.mp3",
+    "sentence_audio_url": "hebSentences/המכונית_נוסעת_בכביש__he.mp3",
+    "options": [
+      "מכונית",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 85,
+    "text": "כביש",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/כביש_he.mp3",
+    "sentence_audio_url": "hebSentences/הכביש_ארוך_ורחב__he.mp3",
+    "options": [
+      "כביש",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 86,
+    "text": "רמזור",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/רמזור_he.mp3",
+    "sentence_audio_url": "hebSentences/הרמזור_אדום__he.mp3",
+    "options": [
+      "רמזור",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 87,
+    "text": "נסיעה",
+    "category": "תחבורה ותנועה",
+    "difficulty": "medium",
+    "audio_url": "hebWords/נסיעה_he.mp3",
+    "sentence_audio_url": "hebSentences/הנסיעה_הייתה_ארוכה__he.mp3",
+    "options": [
+      "נסיעה",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 88,
+    "text": "עצירה",
+    "category": "תחבורה ותנועה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/עצירה_he.mp3",
+    "sentence_audio_url": "hebSentences/יש_עצירה_ברמזור__he.mp3",
+    "options": [
+      "עצירה",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 89,
+    "text": "מעבר",
+    "category": "תחבורה ותנועה",
+    "difficulty": "medium",
+    "audio_url": "hebWords/מעבר_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_עובר_במעבר_חציה__he.mp3",
+    "options": [
+      "מעבר",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 90,
+    "text": "תחנה",
+    "category": "תחבורה ותנועה",
+    "difficulty": "medium",
+    "audio_url": "hebWords/תחנה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מחכה_בתחנה__he.mp3",
+    "options": [
+      "תחנה",
+      "אוטובוס",
+      "רכבת",
+      "אופניים"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 91,
+    "text": "בוקר",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/בוקר_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_קם_בבוקר__he.mp3",
+    "options": [
+      "בוקר",
+      "ערב",
+      "לילה",
+      "היום"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 92,
+    "text": "ערב",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/ערב_he.mp3",
+    "sentence_audio_url": "hebSentences/בערב_אני_בבית__he.mp3",
+    "options": [
+      "ערב",
+      "בוקר",
+      "לילה",
+      "היום"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 93,
+    "text": "לילה",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/לילה_he.mp3",
+    "sentence_audio_url": "hebSentences/בלילה_אני_ישן__he.mp3",
+    "options": [
+      "לילה",
+      "בוקר",
+      "ערב",
+      "היום"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 94,
+    "text": "היום",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/היום_he.mp3",
+    "sentence_audio_url": "hebSentences/היום_יום_יפה__he.mp3",
+    "options": [
+      "היום",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 95,
+    "text": "מחר",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/מחר_he.mp3",
+    "sentence_audio_url": "hebSentences/מחר_נלך_לטיול__he.mp3",
+    "options": [
+      "מחר",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 96,
+    "text": "אתמול",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/אתמול_he.mp3",
+    "sentence_audio_url": "hebSentences/אתמול_שיחקתי_עם_חברים__he.mp3",
+    "options": [
+      "אתמול",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 97,
+    "text": "שבוע",
+    "category": "זמן ושגרה",
+    "difficulty": "easy",
+    "audio_url": "hebWords/שבוע_he.mp3",
+    "sentence_audio_url": "hebSentences/שבוע_יש_שבעה_ימים__he.mp3",
+    "options": [
+      "שבוע",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 98,
+    "text": "חודש",
+    "category": "זמן ושגרה",
+    "difficulty": "medium",
+    "audio_url": "hebWords/חודש_he.mp3",
+    "sentence_audio_url": "hebSentences/בחודש_יש_הרבה_ימים__he.mp3",
+    "options": [
+      "חודש",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 99,
+    "text": "שעה",
+    "category": "זמן ושגרה",
+    "difficulty": "medium",
+    "audio_url": "hebWords/שעה_he.mp3",
+    "sentence_audio_url": "hebSentences/השיעור_נמשך_שעה__he.mp3",
+    "options": [
+      "שעה",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  },
+  {
+    "id": 100,
+    "text": "דקה",
+    "category": "זמן ושגרה",
+    "difficulty": "medium",
+    "audio_url": "hebWords/דקה_he.mp3",
+    "sentence_audio_url": "hebSentences/אני_מחכה_דקה__he.mp3",
+    "options": [
+      "דקה",
+      "בוקר",
+      "ערב",
+      "לילה"
+    ],
+    "correct_option": 0
+  }
+]
