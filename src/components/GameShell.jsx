@@ -55,21 +55,38 @@ export default function GameShell({ mode, onExit, words }) {
     <section className="game-shell" dir="rtl">
       {/* TOP BAR (אחד ויחיד) */}
       <div className="topbar">
-        <div className="topbar-left">
-          <button
-            className="home-btn"
-            onClick={onExit}
-            aria-label="Home"
-            title="Home"
-          >
-            🏠
-          </button>
-          <Achievements compact />
-        </div>
+  {/* LEFT – ניווט קבוע */}
+      <div className="topbar-left">
+        <button
+          className="icon-btn"
+          onClick={() => (window.location.href = '/')}
+          aria-label="Home"
+          title="Home"
+        >
+          ⌂
+        </button>
 
-        <div className="topbar-right">
-          <ScoreBoard points={points} streak={streak} />
-        </div>
+        <button
+          className="back-btn"
+          onClick={onExit}
+          aria-label="Back"
+          title="Back"
+        >
+          ◀ Back
+        </button>
+      </div>
+
+      {/* CENTER – ריק או כותרת */}
+      <div className="topbar-center" />
+
+      {/* RIGHT – ניקוד */}
+      <div className="topbar-right">
+        <ScoreBoard points={points} streak={streak} />
+      </div>
+    </div>
+
+      <div className="ach-inline">
+        <Achievements compact />
       </div>
 
       {/* הישגים בתוך המסך, בלי Top פנימי

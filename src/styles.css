@@ -320,6 +320,20 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
   align-items: center;
 }
 
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  padding: 12px 16px;
+  background: rgba(251,246,242,0.75);
+  backdrop-filter: blur(10px);
+}
+
 /* אם כבר יש לך הגדרות לצ׳יפ, רק לוודא שהן נראות פרימיום */
 .ach-chip,
 .ach-medal{
@@ -339,12 +353,29 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 }
 
 .topbar-left{
-  display:flex;
-  gap:8px;
-  align-items:center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  justify-self: start;   /* 🔥 תמיד שמאל */
 }
 
-
+.topbar-center{
+  justify-self: center;
+}
+.topbar-right{
+  justify-self: end;     /* 🔥 תמיד ימין */
+}
+.icon-btn{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  cursor: pointer;
+  font-size: 16px;
+}
 /* Achievements ברירת מחדל (מסך מלא) – אם כבר יש, לא חייב לשנות */
 .achievements-screen{
   /* אל תכריח רוחב/רקע כאן אם זה דופק את GameShell */
