@@ -135,10 +135,10 @@ export default function MathMode({ onResult }) {
       </div>
 
       <QuestionCard
-        direction="rtl"
+        direction="ltr"
         // שולחים JSX כדי לקבל תצוגה במאונך (pre שומר רווחים ושורות)
         text={
-          <pre style={{ margin: 0, textAlign: 'left', fontFamily: 'inherit', lineHeight: 1.2 }}>
+          <pre style={{ margin: 0, textAlign: 'right', fontFamily: 'inherit', lineHeight: 1.2 }}>
             {verticalText}
           </pre>
         }
