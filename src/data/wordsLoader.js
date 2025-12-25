@@ -10,7 +10,7 @@ export async function loadWords() {
   }
 
   try {
-    const resp = await fetch('/words_he.json')
+    const resp = await fetch(`${import.meta.env.BASE_URL}words_he.json`)
     const data = await resp.json()
     // Cache a copy
     localStorage.setItem('words_he_cache', JSON.stringify(data))
