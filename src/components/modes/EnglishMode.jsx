@@ -1,6 +1,15 @@
 import React, { useState } from 'react'
 import QuestionCard from '../question/QuestionCard'
 
+function shuffle(array) {
+  const a = [...array]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
 export default function EnglishMode({ onResult }) {
   const [qIndex, setQIndex] = useState(0)
   const [playedAudio, setPlayedAudio] = useState(false)
@@ -58,16 +67,31 @@ export default function EnglishMode({ onResult }) {
 ];
   const q = questions[qIndex % questions.length]
 
-  const handlePlayed = (type) => {
-    // note that either word or sentence played should mark this question as audio-enabled
+  // ✅ Shuffle יציב לכל שאלה (תלוי רק ב-qIndex)
+  const { shuffledOptions, shuffledCorrectIndex } = useMemo(() => {
+    const decorated = q.options.map((text, idx) => ({
+      text,
+      isCorrect: idx === q.correct
+    }))
+
+    const shuffled = shuffle(decorated)
+    const correctIdx = shuffled.findIndex(x => x.isCorrect)
+
+    return {
+      shuffledOptions: shuffled.map(x => x.text),
+      shuffledCorrectIndex: correctIdx
+    }
+  }, [qIndex]) // חשוב: רק qIndex כדי שלא ישתנה על playedAudio
+
+  const handlePlayed = () => {
     setPlayedAudio(true)
   }
 
   const answer = (i) => {
-    const correct = i === q.correct
+    const correct = i === shuffledCorrectIndex
     onResult({ correct, meta: { audio: playedAudio } })
     setPlayedAudio(false)
-    setQIndex(qIndex+1)
+    setQIndex(qIndex + 1)
   }
 
   return (
@@ -75,10 +99,9 @@ export default function EnglishMode({ onResult }) {
       <QuestionCard
         direction="ltr"
         text={q.word}
-        options={q.options}
-        correctIndex={q.correct}
+        options={shuffledOptions}
+        correctIndex={shuffledCorrectIndex}
         onAnswer={answer}
-        // provide TTS fallbacks (no pre-recorded audio files for English questions)
         ttsText={q.word}
         ttsSentence={q.sentence}
         ttsLang={'en-US'}
