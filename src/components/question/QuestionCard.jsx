@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState,useMemo } from 'react'
 
 // Props added:
 // - ttsText: string (fallback text to speak for the word)
