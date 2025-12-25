@@ -4,11 +4,58 @@ import QuestionCard from '../question/QuestionCard'
 export default function EnglishMode({ onResult }) {
   const [qIndex, setQIndex] = useState(0)
   const [playedAudio, setPlayedAudio] = useState(false)
-  const questions = [
-    { word: 'apple', options: ['apple','aple','appel','appl'], correct: 0, sentence: 'I ate a red apple.' },
-    { word: 'happy', options: ['happy','hapy','hapsy','happi'], correct: 0, sentence: 'She was very happy today.' }
-  ]
+ const questions = [
+  { word: 'Pan', options: ['מחבת', 'כובע', 'בלון', 'קופסה'], correct: 0, sentence: 'I used a pan to cook eggs.' },
+  { word: 'Tan', options: ['שזוף', 'כחול', 'רוח', 'גינה'], correct: 0, sentence: 'My skin is tan in the summer.' },
+  { word: 'Bat', options: ['עטלף', 'חתול', 'דג', 'סוס'], correct: 0, sentence: 'A bat flies at night.' },
+  { word: 'Tag', options: ['תג', 'תיק', 'שולחן', 'דלת'], correct: 0, sentence: 'The tag is on my bag.' },
+  { word: 'Bag', options: ['תיק', 'כיסא', 'מיטה', 'חלון'], correct: 0, sentence: 'I put my book in my bag.' },
+  { word: 'Nat', options: ['שם', 'אוכל', 'כיתה', 'רכבת'], correct: 0, sentence: 'Nat is my friend.' },
+  { word: 'Ban', options: ['לאסור', 'לשיר', 'לרוץ', 'לישון'], correct: 0, sentence: 'They ban phones in class.' },
+  { word: 'Tab', options: ['לשונית', 'מחברת', 'כיסא', 'מורה'], correct: 0, sentence: 'Click the tab on the screen.' },
+  { word: 'Gab', options: ['פטפוט', 'שקט', 'שינה', 'נסיעה'], correct: 0, sentence: 'They like to gab a lot.' },
 
+  { word: 'Hat', options: ['כובע', 'מחברת', 'דלת', 'אופניים'], correct: 0, sentence: 'I wear a hat in the sun.' },
+  { word: 'Balloon', options: ['בלון', 'קופסה', 'מיטה', 'רמזור'], correct: 0, sentence: 'The balloon is big and red.' },
+  { word: 'Magic', options: ['קסם', 'שיעור', 'כביש', 'מרק'], correct: 0, sentence: 'The magic trick was fun.' },
+  { word: 'Cupcake', options: ['קאפקייק', 'לחם', 'גבינה', 'תפוח'], correct: 0, sentence: 'I ate a cupcake.' },
+  { word: 'Gift', options: ['מתנה', 'כיסא', 'חלון', 'גשם'], correct: 0, sentence: 'I got a gift for my birthday.' },
+  { word: 'Friend', options: ['חבר', 'מורה', 'תינוק', 'סבא'], correct: 0, sentence: 'My friend plays with me.' },
+  { word: 'Gift Card', options: ['כרטיס מתנה', 'כרטיסייה', 'מחברת', 'ארון'], correct: 0, sentence: 'I got a gift card.' },
+  { word: 'Par', options: ['ממוצע', 'פר', 'כדור', 'תחנה'], correct: 0, sentence: 'Par is a number in golf.' },
+
+  { word: 'Potato', options: ['תפוח אדמה', 'תפוח', 'בננה', 'אורז'], correct: 0, sentence: 'I ate a potato.' },
+  { word: 'Garden', options: ['גינה', 'כיתה', 'תחנה', 'ארון'], correct: 0, sentence: 'We play in the garden.' },
+  { word: 'Sleep', options: ['לישון', 'לשתות', 'לרוץ', 'לשיר'], correct: 0, sentence: 'I sleep at night.' },
+  { word: 'Wake up', options: ['לקום', 'לשבת', 'לעמוד', 'לישון'], correct: 0, sentence: 'I wake up in the morning.' },
+  { word: 'Sit down', options: ['לשבת', 'לקום', 'לעמוד', 'לרוץ'], correct: 0, sentence: 'Please sit down.' },
+  { word: 'Stand up', options: ['לעמוד', 'לשבת', 'לקום', 'לישון'], correct: 0, sentence: 'Stand up, please.' },
+
+  { word: 'Alligator', options: ['תנין', 'אריה', 'פיל', 'ציפור'], correct: 0, sentence: 'The alligator is in the water.' },
+  { word: 'Girl', options: ['ילדה', 'ילד', 'תינוק', 'מורה'], correct: 0, sentence: 'The girl is happy.' },
+  { word: 'Boy', options: ['ילד', 'ילדה', 'תינוק', 'תלמיד'], correct: 0, sentence: 'The boy can run fast.' },
+  { word: 'Aunt', options: ['דודה', 'דוד', 'סבתא', 'אחות'], correct: 0, sentence: 'My aunt came to visit.' },
+  { word: 'Uncle', options: ['דוד', 'דודה', 'סבא', 'אח'], correct: 0, sentence: 'My uncle plays with me.' },
+
+  { word: 'Bike', options: ['אופניים', 'אוטובוס', 'רכבת', 'מכונית'], correct: 0, sentence: 'I have a bike.' },
+  { word: 'Ride', options: ['לרכוב', 'לרוץ', 'לישון', 'לאכול'], correct: 0, sentence: 'I ride my bike to the park.' },
+
+  { word: 'Sing', options: ['לשיר', 'לרקוד', 'לשחק', 'לישון'], correct: 0, sentence: 'I sing a song.' },
+  { word: 'Dance', options: ['לרקוד', 'לשיר', 'לשבת', 'לעמוד'], correct: 0, sentence: 'We dance at the party.' },
+  { word: 'Play', options: ['לשחק', 'לישון', 'לשתות', 'לכתוב'], correct: 0, sentence: 'I play with my friend.' },
+  { word: 'Take pictures', options: ['לצלם תמונות', 'לכתוב', 'לקרוא', 'לרוץ'], correct: 0, sentence: 'I take pictures with my phone.' },
+  { word: 'Listen to music', options: ['להקשיב למוזיקה', 'לשיר', 'לרקוד', 'לישון'], correct: 0, sentence: 'I listen to music.' },
+
+  { word: 'Box', options: ['קופסה', 'תיק', 'ארון', 'מיטה'], correct: 0, sentence: 'The toy is in the box.' },
+  { word: 'Grandfather', options: ['סבא', 'סבתא', 'דוד', 'אבא'], correct: 0, sentence: 'My grandfather is kind.' },
+  { word: 'Grandmother', options: ['סבתא', 'סבא', 'דודה', 'אמא'], correct: 0, sentence: 'My grandmother tells stories.' },
+  { word: 'Sister', options: ['אחות', 'אח', 'חברה', 'תינוק'], correct: 0, sentence: 'My sister is in my class.' },
+  { word: 'Brother', options: ['אח', 'אחות', 'חבר', 'סבא'], correct: 0, sentence: 'My brother likes football.' },
+  { word: 'Baby', options: ['תינוק', 'תלמיד', 'מורה', 'אח'], correct: 0, sentence: 'The baby is sleeping.' },
+
+  { word: 'Eat', options: ['לאכול', 'לשתות', 'לישון', 'לרוץ'], correct: 0, sentence: 'I eat lunch at school.' },
+  { word: 'Drink', options: ['לשתות', 'לאכול', 'לרוץ', 'לשיר'], correct: 0, sentence: 'I drink water every day.' }
+];
   const q = questions[qIndex % questions.length]
 
   const handlePlayed = (type) => {
