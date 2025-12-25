@@ -18,10 +18,10 @@ export default function Welcome({ onStart }) {
       <h2>שלום! 👋</h2>
       <p className="sub">ברוכים הבאים ללומדים אנגלית — מה השם שלך? 🌟</p>
 
-      <div className="name-input">
+      <form className="name-input" onSubmit={(e) => { e.preventDefault(); start(); }}>
         <input placeholder="מה השם שלך?" value={name} onChange={e=>setName(e.target.value)} />
-        <button className="big primary" onClick={start}>התחל</button>
-      </div>
+        <button type="submit" className="big primary">התחל</button>
+      </form>
       
     </div>
   )

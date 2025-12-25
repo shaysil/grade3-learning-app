@@ -5,15 +5,12 @@ function shuffle(array) {
   const a = [...array]
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
+      ;[a[i], a[j]] = [a[j], a[i]]
   }
   return a
 }
 
-export default function EnglishMode({ onResult }) {
-  const [qIndex, setQIndex] = useState(0)
-  const [playedAudio, setPlayedAudio] = useState(false)
- const questions = [
+const questions = [
   { word: 'Pan', options: ['מחבת', 'כובע', 'בלון', 'קופסה'], correct: 0, sentence: 'I used a pan to cook eggs.' },
   { word: 'Tan', options: ['שזוף', 'כחול', 'רוח', 'גינה'], correct: 0, sentence: 'My skin is tan in the summer.' },
   { word: 'Bat', options: ['עטלף', 'חתול', 'דג', 'סוס'], correct: 0, sentence: 'A bat flies at night.' },
@@ -65,7 +62,12 @@ export default function EnglishMode({ onResult }) {
   { word: 'Eat', options: ['לאכול', 'לשתות', 'לישון', 'לרוץ'], correct: 0, sentence: 'I eat lunch at school.' },
   { word: 'Drink', options: ['לשתות', 'לאכול', 'לרוץ', 'לשיר'], correct: 0, sentence: 'I drink water every day.' }
 ];
-  const q = questions[qIndex % questions.length]
+
+export default function EnglishMode({ onResult }) {
+  const [qIndex, setQIndex] = useState(0)
+  const [playedAudio, setPlayedAudio] = useState(false)
+  const [shuffledQuestions, setShuffledQuestions] = useState(() => shuffle(questions))
+  const q = shuffledQuestions[qIndex % shuffledQuestions.length]
 
   // ✅ Shuffle יציב לכל שאלה (תלוי רק ב-qIndex)
   const { shuffledOptions, shuffledCorrectIndex } = useMemo(() => {
