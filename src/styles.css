@@ -104,14 +104,19 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
   background: white;
   border: none;
   border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 42px;
   height: 42px;
   font-size: 20px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.ach-inline {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .home-btn:hover {

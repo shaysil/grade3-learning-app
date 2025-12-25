@@ -145,6 +145,7 @@ export default function MathMode({ onResult }) {
         options={options}
         correctIndex={correctIndex}
         onAnswer={handleAnswer}
+        hideAudio={true}
       />
     </div>
   )

@@ -5,7 +5,7 @@ import React, { useRef, useEffect, useState,useMemo } from 'react'
 // - ttsSentence: string (fallback sentence to speak)
 // - ttsLang: optional language for TTS (default 'en-US')
 // - onPlayAudio: callback(type) called when audio/tts is played (type = 'word'|'sentence')
-export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang='en-US', onPlayAudio }) {
+export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang='en-US', onPlayAudio ,hideAudio = false,}) {
   const audio = useRef(null)
   const sentAudio = useRef(null)
   const wordUtter = useRef(null)
@@ -24,7 +24,10 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
   useEffect(() => {
     setSelected(null)
     setLocked(false)
-
+     if (hideAudio) {
+    // אם מסתירים אודיו (למשל Math) – לא טוענים/מנגנים בכלל
+    return
+  }
     // helper: try alternative paths based on Hebrew folders / audio naming
     async function tryAlternativeAudio(kind, originalUrl){
       const candidates = []
@@ -110,7 +113,7 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [audioSrc, sentenceAudio, ttsText, ttsSentence])
+  }, [audioSrc, sentenceAudio, ttsText, ttsSentence, hideAudio])
 
   const speakText = (str, lang, kind) => {
     if (!str) { showPlayError('No text to speak'); return }
@@ -196,17 +199,33 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
       <div className="hero">
         <div className="question-title">{text}</div>
 
-        <div className="play-row">
-          <div className="play-item">
-            <button className="play-circle secondary" onClick={playSentence} disabled={!(sentenceAudio || ttsSentence)} aria-label="Play sentence">📝</button>
-            <div className="play-label">{direction === 'rtl' ? 'משפט' : 'Sentence'}</div>
-          </div>
+        {!hideAudio && (
+          <div className="play-row">
+            <div className="play-item">
+              <button
+                className="play-circle secondary"
+                onClick={playSentence}
+                disabled={!(sentenceAudio || ttsSentence)}
+                aria-label="Play sentence"
+              >
+                📝
+              </button>
+              <div className="play-label">{direction === 'rtl' ? 'משפט' : 'Sentence'}</div>
+            </div>
 
-          <div className="play-item">
-            <button className="play-circle primary" onClick={playWord} aria-label="Play word">🔊</button>
-            <div className="play-label">{direction === 'rtl' ? 'מילה' : 'Word'}</div>
+            <div className="play-item">
+              <button
+                className="play-circle primary"
+                onClick={playWord}
+                aria-label="Play word"
+              >
+                🔊
+              </button>
+              <div className="play-label">{direction === 'rtl' ? 'מילה' : 'Word'}</div>
+            </div>
           </div>
-        </div>
+        )}
+
 
         {playErrorMsg ? <div className="play-error">{playErrorMsg}</div> : null}
       </div>
