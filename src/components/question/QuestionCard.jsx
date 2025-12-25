@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState,useMemo } from 'react'
+import React, { useRef, useEffect, useState, useMemo } from 'react'
 
 // Props added:
 // - ttsText: string (fallback text to speak for the word)
 // - ttsSentence: string (fallback sentence to speak)
 // - ttsLang: optional language for TTS (default 'en-US')
 // - onPlayAudio: callback(type) called when audio/tts is played (type = 'word'|'sentence')
-export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang='en-US', onPlayAudio ,hideAudio = false,}) {
+export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang = 'en-US', onPlayAudio, hideAudio = false, }) {
   const audio = useRef(null)
   const sentAudio = useRef(null)
   const wordUtter = useRef(null)
@@ -24,16 +24,16 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
   useEffect(() => {
     setSelected(null)
     setLocked(false)
-     if (hideAudio) {
-    // אם מסתירים אודיו (למשל Math) – לא טוענים/מנגנים בכלל
-    return
-  }
+    if (hideAudio) {
+      // אם מסתירים אודיו (למשל Math) – לא טוענים/מנגנים בכלל
+      return
+    }
     // helper: try alternative paths based on Hebrew folders / audio naming
-    async function tryAlternativeAudio(kind, originalUrl){
+    async function tryAlternativeAudio(kind, originalUrl) {
       const candidates = []
       if (originalUrl) candidates.push(originalUrl)
       const safe = encodeURIComponent(String(text || '').trim())
-      if (kind === 'word'){
+      if (kind === 'word') {
         candidates.push(`/audio/hebWords/${safe}.mp3`)
         candidates.push(`/audio/hebWords/${safe}_word.mp3`)
         candidates.push(`/audio/hebWords/${safe}_word1.mp3`)
@@ -43,8 +43,8 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
         candidates.push(`/audio/hebSentences/${safe}_sentence1.mp3`)
       }
 
-      for (const c of candidates){
-        try{
+      for (const c of candidates) {
+        try {
           const a = new Audio(c)
           await a.play()
           // set the appropriate ref so future controls use it
@@ -52,7 +52,7 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
           else { sentAudio.current = a; setPlayedSentence(true) }
           if (onPlayAudio) onPlayAudio(kind)
           return true
-        }catch(e){
+        } catch (e) {
           console.warn('candidate audio failed', c, e)
           continue
         }
@@ -80,10 +80,10 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
       }
 
       // try to auto-play the word; if it fails, attempt alternative audio and finally fallback to TTS
-      audio.current.play().then(()=>{
+      audio.current.play().then(() => {
         if (onPlayAudio) onPlayAudio('word')
         setPlayedWord(true)
-      }).catch(async (e)=>{
+      }).catch(async (e) => {
         console.warn('Audio auto-play failed, trying alternatives then TTS', e)
         const triedAlternative = await tryAlternativeAudio('word', audioSrc)
         if (!triedAlternative) {
@@ -92,28 +92,29 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
       })
     } else if (ttsText) {
       // Fallback to TTS auto-play once (may be blocked by some browsers until user interaction)
-      try{
+      try {
         speakText(ttsText, ttsLang, 'word')
         setPlayedWord(true)
-      }catch(e){
+      } catch (e) {
         console.warn('TTS auto-play blocked or failed', e)
       }
     }
 
     return () => {
       if (audio.current) {
-        try{ audio.current.pause() }catch(e){}
+        try { audio.current.pause() } catch (e) { }
       }
       if (sentAudio.current) {
-        try{ sentAudio.current.pause() }catch(e){}
+        try { sentAudio.current.pause() } catch (e) { }
       }
       // cancel any ongoing speech synthesis
       if (window.speechSynthesis) {
-        try{ window.speechSynthesis.cancel() }catch(e){}
+        try { window.speechSynthesis.cancel() } catch (e) { }
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [audioSrc, sentenceAudio, ttsText, ttsSentence, hideAudio])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [audioSrc, sentenceAudio, ttsText, ttsSentence, hideAudio, text]) // Added text key to ensure reset on new question
 
   const speakText = (str, lang, kind) => {
     if (!str) { showPlayError('No text to speak'); return }
@@ -139,10 +140,10 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
   const playSentence = () => {
     console.log('playSentence pressed', { sentenceAudio, hasTTSSentence: !!ttsSentence })
     if (sentAudio.current) {
-      sentAudio.current.play().then(()=>{
+      sentAudio.current.play().then(() => {
         setPlayedSentence(true)
         if (onPlayAudio) onPlayAudio('sentence')
-      }).catch(async (e)=>{
+      }).catch(async (e) => {
         console.warn('Sentence audio play failed, trying alternatives then falling back to TTS', e)
         const tried = await tryAlternativeAudio('sentence', sentenceAudio)
         if (!tried) {
@@ -161,10 +162,10 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
   const playWord = () => {
     console.log('playWord pressed', { audioSrc, hasTTSText: !!ttsText })
     if (audio.current) {
-      audio.current.play().then(()=>{
+      audio.current.play().then(() => {
         if (onPlayAudio) onPlayAudio('word')
         setPlayedWord(true)
-      }).catch(async (e)=>{
+      }).catch(async (e) => {
         console.warn('Audio play failed, trying alternatives then falling back to TTS', e)
         const tried = await tryAlternativeAudio('word', audioSrc)
         if (!tried) {
@@ -180,18 +181,24 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
     }
   }
 
-  const handlePick = (i)=>{
+  const handlePick = (i) => {
     if (locked) return
     setSelected(i)
     setLocked(true)
     const correct = i === correctIndex
     // play feedback sound
-    const s = new Audio(correct?'/audio/correct.mp3':'/audio/wrong.mp3')
-    s.play().catch(()=>{})
-    // small delay for animation, then notify parent
-    setTimeout(()=>{
+    const s = new Audio(correct ? '/audio/correct.mp3' : '/audio/wrong.mp3')
+    s.play().catch(() => { })
+
+    // small delay for animation
+    setTimeout(() => {
       onAnswer(i)
-    },700)
+      // If wrong, unlock to allow retry
+      if (!correct) {
+        setSelected(null)
+        setLocked(false)
+      }
+    }, 700)
   }
 
   return (
@@ -230,13 +237,13 @@ export default function QuestionCard({ direction='ltr', audioSrc, sentenceAudio,
         {playErrorMsg ? <div className="play-error">{playErrorMsg}</div> : null}
       </div>
 
-      <div className="question-text" style={{fontSize: '1.05rem'}}>{direction === 'rtl' ? <span dir="rtl">🔤 בחר את האיות הנכון</span> : <span>Choose the correct spelling</span>}</div>
+      <div className="question-text" style={{ fontSize: '1.05rem' }}>{direction === 'rtl' ? <span dir="rtl">🔤 בחר את האיות הנכון</span> : <span>Choose the correct spelling</span>}</div>
 
       <div className="options">
         {options.map((opt, i) => {
-          const cls = selected === null ? 'option' : i === correctIndex ? 'option correct' : (selected===i? 'option wrong' : 'option disabled')
+          const cls = selected === null ? 'option' : i === correctIndex ? 'option correct' : (selected === i ? 'option wrong' : 'option disabled')
           return (
-            <button className={cls} key={i} onClick={()=>handlePick(i)} disabled={locked}>{opt}</button>
+            <button className={cls} key={i} onClick={() => handlePick(i)} disabled={locked}>{opt}</button>
           )
         })}
       </div>
