@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div className={`app ${mode === 'hebrew' ? 'rtl' : ''}`}>
       <header className="header">
-        <h1 className="brand">לומדים כיתה ג׳</h1>
+        <h1 className="brand">לומדים כיתה ג' 3</h1>
         <div style={{display:'flex',alignItems:'center',gap:12}}>
           {name ? <div className="greeting">שלום, {name} 👋</div> : null}
           <AvatarBanner />
