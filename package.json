@@ -5,9 +5,8 @@
   "homepage": "https://shaysil.github.io/grade3-learning-app/",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
-    "preview": "npx vite preview",
-    "deploy": "gh-pages -d dist",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\""
   },
   "dependencies": {

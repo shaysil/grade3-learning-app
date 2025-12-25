@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/grade3-learning-app/", // חייב להיות: /<repo-name>/
+  base: "/grade3-learning-app/",
 });
