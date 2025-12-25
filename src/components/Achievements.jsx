@@ -75,7 +75,7 @@ export default function Achievements({ compact = false }) {
             {/* מדליה / יעד לרצף */}
             <div className="ach-chip ach-chip-soft">
               <div className="ach-medal-emoji">🎖️</div>
-              <div className="ach-medal-label">{medalText}</div>
+              <div className="ach-chip-label">{medalText}</div>
             </div>
 
             {/* שיא */}

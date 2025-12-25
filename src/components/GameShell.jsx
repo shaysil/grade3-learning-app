@@ -59,20 +59,11 @@ export default function GameShell({ mode, onExit, words }) {
       <div className="topbar-left">
         <button
           className="icon-btn"
-          onClick={() => (window.location.href = '/')}
+          onClick={onExit}
           aria-label="Home"
           title="Home"
         >
           ⌂
-        </button>
-
-        <button
-          className="back-btn"
-          onClick={onExit}
-          aria-label="Back"
-          title="Back"
-        >
-          ◀ Back
         </button>
       </div>
 
