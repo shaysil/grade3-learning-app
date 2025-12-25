@@ -56,7 +56,14 @@ export default function GameShell({ mode, onExit, words }) {
       {/* TOP BAR (אחד ויחיד) */}
       <div className="topbar">
         <div className="topbar-left">
-          <button className="back-btn" onClick={onExit}>◀️ Back</button>
+          <button
+            className="home-btn"
+            onClick={onExit}
+            aria-label="Home"
+            title="Home"
+          >
+            🏠
+          </button>
           <Achievements compact />
         </div>
 
@@ -65,10 +72,10 @@ export default function GameShell({ mode, onExit, words }) {
         </div>
       </div>
 
-      {/* הישגים בתוך המסך, בלי Top פנימי */}
+      {/* הישגים בתוך המסך, בלי Top פנימי
       <div className="ach-inline">
         <Achievements compact />
-      </div>
+      </div> */}
 
       <BadgeToast />
       <Confetti />

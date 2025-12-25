@@ -100,18 +100,23 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 
 /* game card and back button */
 .game-card{margin-top:16px;background:linear-gradient(180deg,#fff,#fbfff8);padding:20px;border-radius:14px;box-shadow:0 12px 30px rgba(16,24,40,0.06)}
-.back-btn{
-  height: 34px;
-  padding: 0 12px;
+.home-btn {
+  background: white;
+  border: none;
   border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.08);
-  background: #fff;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
   cursor: pointer;
-  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.back-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,24,40,0.06)}
 
+.home-btn:hover {
+  background: #f2f2f2;
+}
 /* scoreboard progress */
 .scoreboard{display:flex;gap:12px;align-items:center}
 .scoreboard .bar{width:160px;height:10px;background:#f1f5f9;border-radius:10px;overflow:hidden}
@@ -386,7 +391,7 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 /* קומפקט: להקטין קצת את הצ'יפים כדי לא לשבור topbar */
 .topbar .ach-chip,
 .topbar .ach-medal{
-  height: 34px;
+  /* height: 34px; */
   padding: 0 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.06);
 }
