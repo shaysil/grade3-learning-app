@@ -135,7 +135,7 @@ export default function MathMode({ onResult }) {
       </div>
 
       <QuestionCard
-        direction="ltr"
+        direction="rtl"
         // שולחים JSX כדי לקבל תצוגה במאונך (pre שומר רווחים ושורות)
         text={
           <pre style={{ margin: 0, textAlign: 'left', fontFamily: 'inherit', lineHeight: 1.2 }}>
