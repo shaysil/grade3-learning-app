@@ -50,9 +50,9 @@ export default function App() {
         <ParentDashboard words={words} onExit={() => setMode(null)} onUpdateWords={setWords} />
       )}
 
-      <footer className="footer">
+      {/* <footer className="footer">
         <button onClick={() => setMode('parent')}>Parent 🚪</button>
-      </footer>
+      </footer> */}
     </div>
   )
 }
