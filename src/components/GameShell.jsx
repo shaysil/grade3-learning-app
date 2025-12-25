@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useMemo } from 'react'
 import HebrewMode from './modes/HebrewMode'
 import EnglishMode from './modes/EnglishMode'
 import MathMode from './modes/MathMode'
@@ -13,6 +13,10 @@ export default function GameShell({ mode, onExit, words }) {
   const [points, setPoints] = useState(() => Number(localStorage.getItem('points') || 0))
   const [streak, setStreak] = useState(() => Number(localStorage.getItem('streak') || 0))
 
+  // אם אין לך מספר שאלה אמיתי כרגע, זה פשוט מציג "שאלה 1"
+  // אם תרצה לחבר למספר אמיתי בהמשך – תן לי מאיפה הוא מגיע ואחבר.
+  const questionLabel = useMemo(() => 'שאלה 1', [])
+
   useEffect(() => {
     localStorage.setItem('points', String(points))
   }, [points])
@@ -21,43 +25,58 @@ export default function GameShell({ mode, onExit, words }) {
     localStorage.setItem('streak', String(streak))
   }, [streak])
 
-
   const onResult = ({ correct, meta }) => {
     if (correct) {
-      setPoints((p) => p + 10)
-      setStreak((s) => {
+      setPoints(p => p + 10)
+      setStreak(s => {
         const next = s + 1
         const newUnlocks = achSetStreak(next) || []
-        newUnlocks.forEach(n=>publish('unlock', n))
+        newUnlocks.forEach(n => publish('unlock', n))
         publish('reaction', { type: 'correct', streak: next })
         return next
       })
     } else {
       const newUnlocks = achSetStreak(0) || []
-      newUnlocks.forEach(n=>publish('unlock', n))
+      newUnlocks.forEach(n => publish('unlock', n))
       publish('reaction', { type: 'wrong', streak: 0 })
       setStreak(0)
     }
 
-    // record audio questions count if meta.audio==true
     if (meta && meta.audio) {
       const newUnlocks = achInc('audio_questions', 1) || []
-      newUnlocks.forEach(n=>publish('unlock', n))
+      newUnlocks.forEach(n => publish('unlock', n))
     }
-    // generic counter for words done
+
     const newUnlocks2 = achInc('words_done', 1) || []
-    newUnlocks2.forEach(n=>publish('unlock', n))
+    newUnlocks2.forEach(n => publish('unlock', n))
   }
 
   return (
-    <section className="game-shell">
+    <section className="game-shell" dir="rtl">
+      {/* TOP BAR (אחד ויחיד) */}
       <div className="topbar">
-        <div style={{display:'flex',gap:8,alignItems:'center'}}>
-          <button className="back-btn" onClick={onExit}>◀️ Back</button>
-          <Achievements />
+        <div className="topbar-left">
+          <button className="back-btn" onClick={onExit} aria-label="חזרה" title="חזרה">
+            <span className="back-ico">◀</span>
+            <span className="back-text">Back</span>
+          </button>
+
+          <div className="topbar-title">
+            <div className="topbar-q">{questionLabel}</div>
+            <div className="topbar-sub">התקדמות והישגים</div>
+          </div>
         </div>
-        <ScoreBoard points={points} streak={streak} />
+
+        <div className="topbar-right">
+          <ScoreBoard points={points} streak={streak} />
+        </div>
       </div>
+
+      {/* הישגים בתוך המסך, בלי Top פנימי */}
+      <div className="ach-inline">
+        <Achievements compact />
+      </div>
+
       <BadgeToast />
       <Confetti />
 

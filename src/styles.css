@@ -122,7 +122,7 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 .confetti-piece.piece-7:before{background:#c7b2ff}
 
 
-/* achievements-screen */
+
 .achievements-screen {
   width: 100%;
   padding: 14px 18px 22px;
@@ -265,6 +265,63 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 .badge-name {
   font-size: 14px;
   opacity: 0.85;
+}
+
+/* מרכז הכותרת + צ׳יפים */
+.ach-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* חדש: עטיפה לכותרת שאלה */
+.ach-question-wrap{
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* חדש: שאלה גדולה ובולטת */
+.ach-question-big{
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: #1f1f1f;
+  line-height: 1.1;
+}
+
+/* חדש: שורת משנה קטנה */
+.ach-question-sub{
+  margin-top: 6px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* צ׳יפים: קצת יותר "נשימה" ועקביות */
+.ach-chips{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* אם כבר יש לך הגדרות לצ׳יפ, רק לוודא שהן נראות פרימיום */
+.ach-chip,
+.ach-medal{
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+  padding: 0 14px;
+}
+.ach-top{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(251,246,242,0.75);
+  backdrop-filter: blur(10px);
 }
 
 

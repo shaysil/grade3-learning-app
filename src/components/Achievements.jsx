@@ -8,7 +8,8 @@ function nextStreakTarget(streak) {
   return { next, remaining: next - streak }
 }
 
-export default function Achievements() {
+export default function Achievements({ compact = false }) {
+
   const [state, setState] = useState({})
 
   useEffect(() => {
@@ -57,14 +58,17 @@ export default function Achievements() {
     <div className="achievements-screen" dir="rtl">
       {/* כותרת/סרגל כמו בתמונה */}
       <div className="ach-top">
-        <button className="ach-icon-btn" title="רענון" onClick={() => setState(getState())}>
+        {/* <button className="ach-icon-btn" title="רענון" onClick={() => setState(getState())}>
           ↻
-        </button>
+        </button> */}
 
         <div className="ach-center">
           {/* “שאלה X” קטן באמצע */}
-          <div className="ach-question">
-            {qNumber ? `שאלה ${qNumber}` : 'שאלה 1'}
+          <div className="ach-question-wrap">
+            <div className="ach-question-big">
+              {qNumber ? `שאלה ${qNumber}` : 'שאלה 1'}
+            </div>
+            <div className="ach-question-sub">המשך תרגול כדי לפתוח הישגים</div>
           </div>
 
           <div className="ach-chips">
@@ -97,9 +101,9 @@ export default function Achievements() {
           </div>
         </div>
 
-        <button className="ach-icon-btn" title="דף הבית" onClick={() => (window.location.href = '/')}>
+        {/* <button className="ach-icon-btn" title="דף הבית" onClick={() => (window.location.href = '/')}>
           ⌂
-        </button>
+        </button> */}
       </div>
 
       {/* Badges (אפשר להשאיר, רק בעיצוב יותר עדין) */}
