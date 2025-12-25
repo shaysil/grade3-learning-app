@@ -27,8 +27,8 @@ export default function LanguageSelection({ onSelect }) {
         </button>
       </div>
 
-      <div className="hint">Tip: Tap the big button to start — audio questions will play automatically</div>
-      <div className="mode-help" style={{marginTop:12,color:'var(--muted)'}}>הערה: בעברית העברית UI תהיה RTL, במתמטיקה הטקסט מיושר לשמאל</div>
+      {/* <div className="hint">Tip: Tap the big button to start — audio questions will play automatically</div>
+      <div className="mode-help" style={{marginTop:12,color:'var(--muted)'}}>הערה: בעברית העברית UI תהיה RTL, במתמטיקה הטקסט מיושר לשמאל</div> */}
     </div>
   )
 }

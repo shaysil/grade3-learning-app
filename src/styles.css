@@ -18,7 +18,7 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 .app{max-width:900px;margin:28px auto;padding:20px;position:relative}
 .app:before{content:'';position:absolute;left:-60px;top:-40px;width:260px;height:260px;background:radial-gradient(circle at 30% 30%, rgba(255,214,170,0.55), rgba(255,214,170,0) 40%);border-radius:50%}
 .app:after{content:'';position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;background:radial-gradient(circle at 70% 70%, rgba(193,232,255,0.5), rgba(193,232,255,0) 30%);border-radius:50%}
-.header{display:flex;align-items:center;justify-content:space-between;padding:12px 8px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:12px 8px;direction: rtl;}
 .brand{font-size:1.25rem}
 .greeting{font-weight:600;color:var(--muted)}
 
@@ -34,7 +34,7 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 
 /* Language selection */
 .language-selection.card{background:var(--card);padding:20px;border-radius:16px;box-shadow:0 6px 18px rgba(16,24,40,0.06);text-align:center}
-.ls-title{font-size:1.2rem;margin:0}
+.ls-title{font-size:1.2rem;margin:0;direction: rtl;}
 .ls-sub{color:var(--muted);margin:6px 0 14px}
 .buttons{display:flex;gap:12px;justify-content:center}
 .mode-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:16px;width:160px;border-radius:14px;background:linear-gradient(180deg, #fff, #f8fafc);border:1px solid #f1f5f9;box-shadow:0 4px 12px rgba(16,24,40,0.04);cursor:pointer}

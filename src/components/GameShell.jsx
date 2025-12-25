@@ -52,7 +52,7 @@ export default function GameShell({ mode, onExit, words }) {
   }
 
   return (
-    <section className="game-shell" dir="rtl">
+    <section className="game-shell" >
       {/* TOP BAR (אחד ויחיד) */}
       <div className="topbar">
   {/* LEFT – ניווט קבוע */}
@@ -63,7 +63,7 @@ export default function GameShell({ mode, onExit, words }) {
           aria-label="Home"
           title="Home"
         >
-          ⌂
+          🏠
         </button>
       </div>
 
