@@ -107,6 +107,7 @@ export default function Achievements({ compact = false }) {
       </div>
 
       {/* Badges (אפשר להשאיר, רק בעיצוב יותר עדין) */}
+      <div className={compact ? "ach-body ach-body-compact" : "ach-body"}>
       <div className="ach-badges">
         <div className="ach-badges-title">🏅 הישגים</div>
 
@@ -122,7 +123,9 @@ export default function Achievements({ compact = false }) {
             ))}
           </div>
         )}
+        </div>
       </div>
+
     </div>
   )
 }

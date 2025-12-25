@@ -100,7 +100,16 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
 
 /* game card and back button */
 .game-card{margin-top:16px;background:linear-gradient(180deg,#fff,#fbfff8);padding:20px;border-radius:14px;box-shadow:0 12px 30px rgba(16,24,40,0.06)}
-.back-btn{background:transparent;border:1px solid #eef2ff;padding:8px 10px;border-radius:10px;cursor:pointer}
+.back-btn{
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  cursor: pointer;
+  font-weight: 600;
+}
 .back-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,24,40,0.06)}
 
 /* scoreboard progress */
@@ -324,6 +333,63 @@ body{font-family:'Baloo 2', system-ui,Segoe UI,Roboto,Arial; background:linear-g
   backdrop-filter: blur(10px);
 }
 
+.topbar-left{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+
+/* Achievements ברירת מחדל (מסך מלא) – אם כבר יש, לא חייב לשנות */
+.achievements-screen{
+  /* אל תכריח רוחב/רקע כאן אם זה דופק את GameShell */
+}
+
+/* מעטפת לתוכן */
+.ach-body{
+  padding: 14px 18px 28px;
+}
+
+/* קומפקט: נטמע בתוך ה-topbar בלי לשבור פרופורציות */
+.ach-body-compact{
+  padding: 0;
+}
+
+/* קומפקט: מבטל רקעים/גבולות שמרגישים כמו "מסך בתוך מסך" */
+.topbar .achievements-screen{
+  background: transparent;
+  min-height: unset;
+}
+
+/* קומפקט: הצגה כ"שורת צ'יפים" נקייה */
+.topbar .ach-badges{
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+}
+
+/* קומפקט: להסתיר את כותרת "הישגים" והטקסטים הארוכים בתוך ה-topbar */
+.topbar .ach-badges-title,
+.topbar .ach-muted{
+  display: none;
+}
+
+/* קומפקט: הצ'יפים נשארים בשורה יפה בתוך ה-topbar */
+.topbar .ach-chips{
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+/* קומפקט: להקטין קצת את הצ'יפים כדי לא לשבור topbar */
+.topbar .ach-chip,
+.topbar .ach-medal{
+  height: 34px;
+  padding: 0 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
 
 
 

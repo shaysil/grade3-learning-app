@@ -56,15 +56,8 @@ export default function GameShell({ mode, onExit, words }) {
       {/* TOP BAR (אחד ויחיד) */}
       <div className="topbar">
         <div className="topbar-left">
-          <button className="back-btn" onClick={onExit} aria-label="חזרה" title="חזרה">
-            <span className="back-ico">◀</span>
-            <span className="back-text">Back</span>
-          </button>
-
-          <div className="topbar-title">
-            <div className="topbar-q">{questionLabel}</div>
-            <div className="topbar-sub">התקדמות והישגים</div>
-          </div>
+          <button className="back-btn" onClick={onExit}>◀️ Back</button>
+          <Achievements compact />
         </div>
 
         <div className="topbar-right">
