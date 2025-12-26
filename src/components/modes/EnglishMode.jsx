@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import QuestionCard from '../question/QuestionCard'
+import { loadEnglishWords } from '../../data/wordsLoader'
 
 function shuffle(array) {
   const a = [...array]
@@ -22,14 +23,11 @@ export default function EnglishMode({ onResult }) {
   const [shuffledQuestions, setShuffledQuestions] = useState([])
 
   useEffect(() => {
-    fetch('/words_en.json')
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Failed to load questions')
-        }
-        return res.json()
-      })
+    loadEnglishWords()
       .then(data => {
+        if (!data || data.length === 0) {
+          throw new Error('No questions found')
+        }
         setQuestions(data)
         setShuffledQuestions(shuffle(data))
         setLoading(false)
@@ -41,14 +39,12 @@ export default function EnglishMode({ onResult }) {
       })
   }, [])
 
-  if (loading) return <div>Loading questions...</div>
-  if (error) return <div>Error: {error}</div>
-  if (shuffledQuestions.length === 0) return <div>No questions found</div>
-
   const q = shuffledQuestions[qIndex % shuffledQuestions.length]
 
   // ✅ Shuffle יציב לכל שאלה (תלוי רק ב-qIndex)
   const { shuffledOptions, shuffledCorrectIndex } = useMemo(() => {
+    if (!q) return { shuffledOptions: [], shuffledCorrectIndex: 0 }
+
     const decorated = q.options.map((text, idx) => ({
       text,
       isCorrect: idx === q.correct
@@ -61,7 +57,11 @@ export default function EnglishMode({ onResult }) {
       shuffledOptions: shuffled.map(x => x.text),
       shuffledCorrectIndex: correctIdx
     }
-  }, [qIndex]) // חשוב: רק qIndex כדי שלא ישתנה על playedAudio
+  }, [q, qIndex]) // Included q in dependency to be safe
+
+  if (loading) return <div>Loading questions...</div>
+  if (error) return <div>Error: {error}</div>
+  if (shuffledQuestions.length === 0) return <div>No questions found</div>
 
   const handlePlayed = () => {
     setPlayedAudio(true)

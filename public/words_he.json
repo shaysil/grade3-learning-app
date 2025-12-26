@@ -1500,36 +1500,6 @@
     "correct_option": 0
   },
   {
-    "id": 101,
-    "text": "אריה",
-    "category": "חיות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/אריה_he.mp3",
-    "sentence_audio_url": "hebSentences/האריה_הוא_מלך_החיות__he.mp3",
-    "options": [
-      "אריה",
-      "תפוח",
-      "דשא",
-      "חלב"
-    ],
-    "correct_option": 0
-  },
-  {
-    "id": 102,
-    "text": "פיל",
-    "category": "חיות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/פיל_he.mp3",
-    "sentence_audio_url": "hebSentences/לפיל_יש_חדק_ארוך_מאוד__he.mp3",
-    "options": [
-      "שותה",
-      "אמא",
-      "פיל",
-      "לילה"
-    ],
-    "correct_option": 2
-  },
-  {
     "id": 103,
     "text": "ג'ירפה",
     "category": "חיות",
@@ -1590,156 +1560,6 @@
     "correct_option": 3
   },
   {
-    "id": 107,
-    "text": "ציפור",
-    "category": "חיות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/ציפור_he.mp3",
-    "sentence_audio_url": "hebSentences/הציפור_בנתה_קן_על_העץ__he.mp3",
-    "options": [
-      "ביצה",
-      "ביישן",
-      "ציפור",
-      "נחש"
-    ],
-    "correct_option": 2
-  },
-  {
-    "id": 108,
-    "text": "דג",
-    "category": "חיות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/דג_he.mp3",
-    "sentence_audio_url": "hebSentences/הדג_שוחה_במים_הכחולים__he.mp3",
-    "options": [
-      "כותב",
-      "דג",
-      "מורה",
-      "מדבר"
-    ],
-    "correct_option": 1
-  },
-  {
-    "id": 109,
-    "text": "סוס",
-    "category": "חיות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/סוס_he.mp3",
-    "sentence_audio_url": "hebSentences/הסוס_דוהר_מהר_בשדה__he.mp3",
-    "options": [
-      "סוס",
-      "עוגה",
-      "לחם",
-      "רץ"
-    ],
-    "correct_option": 0
-  },
-  {
-    "id": 110,
-    "text": "כבשה",
-    "category": "חיות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/כבשה_he.mp3",
-    "sentence_audio_url": "hebSentences/לכבשה_יש_צמר_רך_ונעים__he.mp3",
-    "options": [
-      "ציפור",
-      "גבינה",
-      "פרח",
-      "כבשה"
-    ],
-    "correct_option": 3
-  },
-  {
-    "id": 111,
-    "text": "לחם",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/לחם_he.mp3",
-    "sentence_audio_url": "hebSentences/אמא_קנתה_לחם_טרי_במאפייה__he.mp3",
-    "options": [
-      "ציפור",
-      "שיעור",
-      "רוח",
-      "לחם"
-    ],
-    "correct_option": 3
-  },
-  {
-    "id": 112,
-    "text": "חלב",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/חלב_he.mp3",
-    "sentence_audio_url": "hebSentences/אני_שותה_חלב_חם_לפני_השינה__he.mp3",
-    "options": [
-      "חתול",
-      "תפוח",
-      "רץ",
-      "חלב"
-    ],
-    "correct_option": 3
-  },
-  {
-    "id": 113,
-    "text": "גבינה",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/גבינה_he.mp3",
-    "sentence_audio_url": "hebSentences/שמתי_גבינה_צהובה_בתוך_הכריך__he.mp3",
-    "options": [
-      "דג",
-      "הולך",
-      "גבינה",
-      "רץ"
-    ],
-    "correct_option": 2
-  },
-  {
-    "id": 114,
-    "text": "ביצה",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/ביצה_he.mp3",
-    "sentence_audio_url": "hebSentences/אכלתי_ביצה_קשה_לארוחת_בוקר__he.mp3",
-    "options": [
-      "ביצה",
-      "בננה",
-      "לחם",
-      "מקשיב"
-    ],
-    "correct_option": 0
-  },
-  {
-    "id": 115,
-    "text": "תפוח",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/תפוח_he.mp3",
-    "sentence_audio_url": "hebSentences/התפוח_האדום_מתוק_וטעים__he.mp3",
-    "options": [
-      "נסיעה",
-      "תפוח",
-      "סוס",
-      "עיפרון"
-    ],
-    "correct_option": 1
-  },
-  {
-    "id": 116,
-    "text": "בננה",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/בננה_he.mp3",
-    "sentence_audio_url": "hebSentences/הקוף_קילף_את_הבננה_ואכל_אותה__he.mp3",
-    "options": [
-      "עץ",
-      "בננה",
-      "כוכב",
-      "עצוב"
-    ],
-    "correct_option": 1
-  },
-  {
     "id": 117,
     "text": "ענבים",
     "category": "אוכל",
@@ -1768,21 +1588,6 @@
       "רמזור"
     ],
     "correct_option": 1
-  },
-  {
-    "id": 119,
-    "text": "עוגה",
-    "category": "אוכל",
-    "difficulty": "easy",
-    "audio_url": "hebWords/עוגה_he.mp3",
-    "sentence_audio_url": "hebSentences/ביום_ההולדת_אכלנו_עוגה_גדולה__he.mp3",
-    "options": [
-      "עוגה",
-      "לוח",
-      "עט",
-      "עומד"
-    ],
-    "correct_option": 0
   },
   {
     "id": 120,
@@ -2143,21 +1948,6 @@
       "ביצה"
     ],
     "correct_option": 2
-  },
-  {
-    "id": 144,
-    "text": "ים",
-    "category": "מקומות",
-    "difficulty": "easy",
-    "audio_url": "hebWords/ים_he.mp3",
-    "sentence_audio_url": "hebSentences/בקיץ_אנחנו_נוסעים_לשחות_בים__he.mp3",
-    "options": [
-      "ים",
-      "מעיל",
-      "כותב",
-      "עוגה"
-    ],
-    "correct_option": 0
   },
   {
     "id": 145,
