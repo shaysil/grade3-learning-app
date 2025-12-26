@@ -66,6 +66,55 @@ function makeProblem(difficulty = 'easy') {
   return p
 }
 
+
+function shuffle(array) {
+  const a = [...array]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+      ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+function generateOptions(result) {
+  const opts = new Set()
+  opts.add(result)
+
+  // Generate 3 distractors
+  let attempts = 0
+  while (opts.size < 4 && attempts < 50) {
+    attempts++
+    // Create reasonable distractors close to the answer
+    const diff = randInt(1, 5) // difference of 1-5
+    const sign = Math.random() < 0.5 ? 1 : -1
+    const val = result + (diff * sign)
+
+    if (val >= 0) { // Keep non-negative for 3rd grade usually
+      opts.add(val)
+    }
+  }
+
+  // Fallback if we couldn't generate enough unique close numbers (rare)
+  while (opts.size < 4) {
+    const val = randInt(0, result + 20)
+    opts.add(val)
+  }
+
+  return shuffle(Array.from(opts))
+}
+
+
+
+function formatVertical(a, b, op) {
+  const sa = String(a)
+  const sb = String(b)
+  const len = Math.max(sa.length, sb.length) + 1
+  const line1 = sa.padStart(len, ' ')
+  const line2 = op + sb.padStart(len - 1, ' ')
+  const sep = '-'.repeat(len)
+  return `${line1}\n${line2}\n${sep}`
+}
+
 export default function MathMode({ onResult }) {
   const [difficulty, setDifficulty] = useState('easy')
   const [prob, setProb] = useState(() => makeProblem('easy'))
