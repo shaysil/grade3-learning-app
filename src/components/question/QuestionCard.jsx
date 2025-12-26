@@ -268,28 +268,31 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
 
         {!hideAudio && (
           <div className="play-row">
-            <div className="play-item">
-              <button
-                className="play-circle secondary"
-                onClick={playSentence}
-                disabled={!(sentenceAudio || ttsSentence)}
-                aria-label="Play sentence"
-              >
-                📝
-              </button>
-              <div className="play-label">{direction === 'rtl' ? 'משפט' : 'Sentence'}</div>
-            </div>
+            {(sentenceAudio || ttsSentence) && (
+              <div className="play-item">
+                <button
+                  className="play-circle secondary"
+                  onClick={playSentence}
+                  aria-label="Play sentence"
+                >
+                  📝
+                </button>
+                <div className="play-label">{direction === 'rtl' ? 'משפט' : 'Sentence'}</div>
+              </div>
+            )}
 
-            <div className="play-item">
-              <button
-                className="play-circle primary"
-                onClick={playWord}
-                aria-label="Play word"
-              >
-                🔊
-              </button>
-              <div className="play-label">{direction === 'rtl' ? 'מילה' : 'Word'}</div>
-            </div>
+            {(audioSrc || ttsText) && (
+              <div className="play-item">
+                <button
+                  className="play-circle primary"
+                  onClick={playWord}
+                  aria-label="Play word"
+                >
+                  🔊
+                </button>
+                <div className="play-label">{direction === 'rtl' ? 'מילה' : 'Word'}</div>
+              </div>
+            )}
           </div>
         )}
 

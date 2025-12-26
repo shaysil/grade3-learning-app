@@ -8,15 +8,15 @@ function nextStreakTarget(streak) {
   return { next, remaining: next - streak }
 }
 
-export default function Achievements({ compact = false }) {
+export default function Achievements({ compact = false, profileId }) {
 
   const [state, setState] = useState({})
 
   useEffect(() => {
-    setState(getState())
-    const id = setInterval(() => setState(getState()), 1000)
+    setState(getState(profileId))
+    const id = setInterval(() => setState(getState(profileId)), 1000)
     return () => clearInterval(id)
-  }, [])
+  }, [profileId])
 
   const unlocked = state.unlocked || {}
   const keys = Object.keys(unlocked)
@@ -108,21 +108,21 @@ export default function Achievements({ compact = false }) {
 
       {/* Badges (אפשר להשאיר, רק בעיצוב יותר עדין) */}
       <div className={compact ? "ach-body ach-body-compact" : "ach-body"}>
-      <div className="ach-badges">
-        <div className="ach-badges-title">🏅 הישגים</div>
+        <div className="ach-badges">
+          <div className="ach-badges-title">🏅 הישגים</div>
 
-        {keys.length === 0 ? (
-          <div className="ach-muted">אין עדיין תגי הישג — ממשיכים לתרגל!</div>
-        ) : (
-          <div className="ach-grid">
-            {keys.map(k => (
-              <div key={k} className="badge-card">
-                <div className="badge-emoji">{k.split(' ')[0]}</div>
-                <div className="badge-name">{k}</div>
-              </div>
-            ))}
-          </div>
-        )}
+          {keys.length === 0 ? (
+            <div className="ach-muted">אין עדיין תגי הישג — ממשיכים לתרגל!</div>
+          ) : (
+            <div className="ach-grid">
+              {keys.map(k => (
+                <div key={k} className="badge-card">
+                  <div className="badge-emoji">{k.split(' ')[0]}</div>
+                  <div className="badge-name">{k}</div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
