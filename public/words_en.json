@@ -57,7 +57,7 @@
   {
     "word": "Nat",
     "options": [
-      "שם",
+      "שם של איש בספר",
       "אוכל",
       "כיתה",
       "רכבת"
@@ -174,17 +174,6 @@
     ],
     "correct": 0,
     "sentence": "I got a gift card."
-  },
-  {
-    "word": "Par",
-    "options": [
-      "ממוצע",
-      "פר",
-      "כדור",
-      "תחנה"
-    ],
-    "correct": 0,
-    "sentence": "Par is a number in golf."
   },
   {
     "word": "Potato",
