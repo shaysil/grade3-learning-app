@@ -7,7 +7,7 @@ import React, { useRef, useEffect, useState, useMemo } from 'react'
 // - onPlayAudio: callback(type) called when audio/tts is played (type = 'word'|'sentence')
 // ttsLang: optional language for TTS (default 'en-US')
 // inputType: 'options' | 'text' (default 'options')
-export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang = 'en-US', onPlayAudio, hideAudio = false, inputType = 'options' }) {
+export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang = 'en-US', onPlayAudio, hideAudio = false, inputType = 'options', instruction }) {
   const audio = useRef(null)
   const sentAudio = useRef(null)
   const wordUtter = useRef(null)
@@ -294,10 +294,17 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
         )}
 
 
+
         {playErrorMsg ? <div className="play-error">{playErrorMsg}</div> : null}
       </div>
 
-      <div className="question-text" style={{ fontSize: '1.05rem' }}>{direction === 'rtl' ? <span dir="rtl">🔤 בחר את האיות הנכון</span> : <span>Choose the correct spelling</span>}</div>
+      <div className="question-text" style={{ fontSize: '1.05rem' }}>
+        {instruction ? (
+          <span dir={direction === 'rtl' ? 'rtl' : 'ltr'}>{instruction}</span>
+        ) : (
+          direction === 'rtl' ? <span dir="rtl">🔤 בחר את האיות הנכון</span> : <span>Choose the correct spelling</span>
+        )}
+      </div>
 
       <div className="options">
         {inputType === 'options' ? (

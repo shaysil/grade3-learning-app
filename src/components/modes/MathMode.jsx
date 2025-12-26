@@ -5,18 +5,54 @@ function randInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-// function makeProblem: already implemented checks for negatives in most places, assuming logic is sound.
-// Let's enforce strict checks just in case.
+function shuffle(array) {
+  const a = [...array]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+      ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
 
-function makeProblem(difficulty = 'easy') {
-  // Common check to swap if result < 0
-  const ensurePositive = (p) => {
-    if (p.result < 0 && p.op === '-') {
-      return { a: p.b, b: p.a, op: p.op, result: p.b - p.a }
+function generateOptions(result) {
+  const opts = new Set()
+  opts.add(result)
+
+  // Generate 3 distractors
+  let attempts = 0
+  while (opts.size < 4 && attempts < 50) {
+    attempts++
+    // Create reasonable distractors close to the answer
+    const diff = randInt(1, 5) // difference of 1-5
+    const sign = Math.random() < 0.5 ? 1 : -1
+    const val = result + (diff * sign)
+
+    if (val >= 0) { // Keep non-negative for 3rd grade usually
+      opts.add(val)
     }
-    return p
   }
 
+  // Fallback if we couldn't generate enough unique close numbers (rare)
+  while (opts.size < 4) {
+    const val = randInt(0, result + 20)
+    opts.add(val)
+  }
+
+  return shuffle(Array.from(opts))
+}
+
+function formatVertical(a, b, op) {
+  const sa = String(a)
+  const sb = String(b)
+  const len = Math.max(sa.length, sb.length) + 1
+  const line1 = sa.padStart(len, ' ')
+  const line2 = op + sb.padStart(len - 1, ' ')
+  const sep = '-'.repeat(len)
+  return `${line1}\n${line2}\n${sep}`
+}
+
+// Helper for mixed problems
+function makeMixedProblem(difficulty) {
   let p = { a: 1, b: 1, op: '+', result: 2 }
 
   if (difficulty === 'easy') {
@@ -59,106 +95,144 @@ function makeProblem(difficulty = 'easy') {
     }
   }
 
-  // Final safety checks
+  // Safety check for negatives
   if (p.op === '-' && p.result < 0) {
     p = { a: p.b, b: p.a, op: p.op, result: p.b - p.a }
   }
   return p
 }
 
-
-function shuffle(array) {
-  const a = [...array]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-      ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-function generateOptions(result) {
-  const opts = new Set()
-  opts.add(result)
-
-  // Generate 3 distractors
-  let attempts = 0
-  while (opts.size < 4 && attempts < 50) {
-    attempts++
-    // Create reasonable distractors close to the answer
-    const diff = randInt(1, 5) // difference of 1-5
-    const sign = Math.random() < 0.5 ? 1 : -1
-    const val = result + (diff * sign)
-
-    if (val >= 0) { // Keep non-negative for 3rd grade usually
-      opts.add(val)
-    }
-  }
-
-  // Fallback if we couldn't generate enough unique close numbers (rare)
-  while (opts.size < 4) {
-    const val = randInt(0, result + 20)
-    opts.add(val)
-  }
-
-  return shuffle(Array.from(opts))
-}
-
-
-
-function formatVertical(a, b, op) {
-  const sa = String(a)
-  const sb = String(b)
-  const len = Math.max(sa.length, sb.length) + 1
-  const line1 = sa.padStart(len, ' ')
-  const line2 = op + sb.padStart(len - 1, ' ')
-  const sep = '-'.repeat(len)
-  return `${line1}\n${line2}\n${sep}`
+// Helper for multiplication table problems
+function makeMultiplesProblem(table) {
+  const tableNum = Number(table)
+  const multiplier = randInt(1, 10)
+  // Randomize order: 5x3 or 3x5
+  const swap = Math.random() < 0.5
+  const a = swap ? multiplier : tableNum
+  const b = swap ? tableNum : multiplier
+  return { a, b, op: '×', result: a * b }
 }
 
 export default function MathMode({ onResult }) {
-  const [difficulty, setDifficulty] = useState('easy')
-  const [prob, setProb] = useState(() => makeProblem('easy'))
-  const [options, setOptions] = useState(() => generateOptions(prob.result))
+  // Mode State: null (menu) | 'mix' | 'multiples'
+  const [subMode, setSubMode] = useState(null)
 
-  // Re-generate problem when difficulty changes
-  useEffect(() => {
-    setProb(makeProblem(difficulty))
-  }, [difficulty])
+  // Settings State
+  const [difficulty, setDifficulty] = useState('easy') // For 'mix'
+  const [selectedTable, setSelectedTable] = useState(null) // For 'multiples': 1-10
 
+  // Game State
+  const [prob, setProb] = useState(null)
+  const [options, setOptions] = useState([])
+
+  // Init game when settings change
   useEffect(() => {
-    setOptions(generateOptions(prob.result))
-  }, [prob])
+    if (subMode === 'mix') {
+      const p = makeMixedProblem(difficulty)
+      setProb(p)
+      setOptions(generateOptions(p.result))
+    } else if (subMode === 'multiples' && selectedTable) {
+      const p = makeMultiplesProblem(selectedTable)
+      setProb(p)
+      setOptions(generateOptions(p.result))
+    } else {
+      // Menu or reset
+      setProb(null)
+    }
+  }, [subMode, difficulty, selectedTable])
 
   const next = () => {
-    const p = makeProblem(difficulty)
-    setProb(p)
+    if (subMode === 'mix') {
+      const p = makeMixedProblem(difficulty)
+      setProb(p)
+      setOptions(generateOptions(p.result))
+    } else if (subMode === 'multiples') {
+      const p = makeMultiplesProblem(selectedTable)
+      setProb(p)
+      setOptions(generateOptions(p.result))
+    }
   }
 
   const handleAnswer = (i) => {
+    if (!prob) return
     const val = Number(options[i])
     const correct = val === prob.result
-    onResult({ correct, meta: { difficulty, op: prob.op } })
+    onResult({ correct, meta: { difficulty, op: prob.op, subMode } })
 
-    // Only advance if correct. If wrong, QuestionCard will unlock and let user retry.
     if (correct) {
       next()
     }
   }
+
+  // Render: Main Menu
+  if (!subMode) {
+    return (
+      <div className="math-menu" style={{ textAlign: 'center', marginTop: 20 }}>
+        <h2>בחר סוג אימון</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'center' }}>
+          <button
+            onClick={() => setSubMode('mix')}
+            style={{ padding: '20px 40px', fontSize: '1.5rem', width: '300px' }}
+          >
+            אימון מעורב
+          </button>
+          <button
+            onClick={() => setSubMode('select_table')}
+            style={{ padding: '20px 40px', fontSize: '1.5rem', width: '300px' }}
+          >
+            לוח הכפל
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  // Render: Multiplication Table Selection
+  if (subMode === 'select_table') {
+    return (
+      <div className="math-table-select" style={{ textAlign: 'center' }}>
+        <h3>בחר כפולות של מספר</h3>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, maxWidth: 400, margin: '20px auto' }}>
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => (
+            <button
+              key={n}
+              onClick={() => { setSelectedTable(n); setSubMode('multiples'); }}
+              style={{ padding: '20px', fontSize: '1.5rem' }}
+            >
+              {n}
+            </button>
+          ))}
+        </div>
+        <button onClick={() => setSubMode(null)} style={{ marginTop: 20 }}>🔙 חזרה</button>
+      </div>
+    )
+  }
+
+  // Render: Active Game (Mix or Multiples)
+  if (!prob) return <div>Loading...</div>
 
   const verticalText = formatVertical(prob.a, prob.b, prob.op)
   const correctIndex = options.findIndex((o) => Number(o) === prob.result)
 
   return (
     <div className="math-mode" style={{ textAlign: 'left' }}>
-      <div style={{ display: 'flex', gap: 8, marginBottom: 12, justifyContent: 'flex-start' }}>
-        <button onClick={() => setDifficulty('easy')} style={{ opacity: difficulty === 'easy' ? 1 : 0.6 }}>קל</button>
-        <button onClick={() => setDifficulty('medium')} style={{ opacity: difficulty === 'medium' ? 1 : 0.6 }}>בינוני</button>
-        <button onClick={() => setDifficulty('hard')} style={{ opacity: difficulty === 'hard' ? 1 : 0.6 }}>קשה</button>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 10 }}>
+        <button onClick={() => setSubMode(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.2rem' }}>🔙 תפריט</button>
+
+        {subMode === 'mix' && (
+          <div style={{ display: 'flex', gap: 8 }}>
+            <button onClick={() => setDifficulty('easy')} style={{ opacity: difficulty === 'easy' ? 1 : 0.6 }}>קל</button>
+            <button onClick={() => setDifficulty('medium')} style={{ opacity: difficulty === 'medium' ? 1 : 0.6 }}>בינוני</button>
+            <button onClick={() => setDifficulty('hard')} style={{ opacity: difficulty === 'hard' ? 1 : 0.6 }}>קשה</button>
+          </div>
+        )}
+        {subMode === 'multiples' && (
+          <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>כפולות של {selectedTable}</div>
+        )}
       </div>
 
       <QuestionCard
         direction="ltr"
-        // Force re-render key if needed, mostly redundant now with dependency fix but good safety
         key={`${prob.a}${prob.op}${prob.b}`}
         text={
           <pre style={{ margin: 0, textAlign: 'right', fontFamily: 'inherit', lineHeight: 1.2 }}>
@@ -169,6 +243,7 @@ export default function MathMode({ onResult }) {
         correctIndex={correctIndex}
         onAnswer={handleAnswer}
         hideAudio={true}
+        instruction="בחר את התשובה הנכונה"
       />
     </div>
   )
