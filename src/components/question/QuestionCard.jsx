@@ -166,7 +166,10 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
     try {
       const u = new SpeechSynthesisUtterance(str)
       u.lang = lang || 'en-US'
-      console.log('Speaking (TTS):', str, lang)
+      if (u.lang.startsWith('en')) {
+        u.rate = 0.60
+      }
+      console.log('Speaking (TTS):', str, lang, 'Rate:', u.rate)
       window.speechSynthesis.speak(u)
       if (kind === 'word') {
         wordUtter.current = u
@@ -318,7 +321,7 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
             )
           })
         ) : (
-          <div className="input-mode" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, marginTop: 10 }}>
+          <div className="input-mode" style={{ width: '100%', gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, marginTop: 10 }}>
             <input
               type="text"
               value={textInput}

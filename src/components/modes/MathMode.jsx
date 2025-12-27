@@ -114,7 +114,7 @@ function makeMultiplesProblem(table) {
 }
 
 export default function MathMode({ onResult }) {
-  // Mode State: null (menu) | 'mix' | 'multiples'
+  // Mode State: null (menu) | 'mix' | 'multiples' | 'word_problems'
   const [subMode, setSubMode] = useState(null)
 
   // Settings State
@@ -124,6 +124,22 @@ export default function MathMode({ onResult }) {
   // Game State
   const [prob, setProb] = useState(null)
   const [options, setOptions] = useState([])
+
+  // Word Problem State
+  const [wordProblemsData, setWordProblemsData] = useState([])
+  const [shuffledWP, setShuffledWP] = useState([])
+  const [wpIndex, setWpIndex] = useState(0)
+
+  // Load Word Problems
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}math_word_problems.json`)
+      .then(res => {
+        if (!res.ok) throw new Error("Failed to load")
+        return res.json()
+      })
+      .then(data => setWordProblemsData(data))
+      .catch(err => console.warn("Failed to load word problems", err))
+  }, [])
 
   // Init game when settings change
   useEffect(() => {
@@ -135,11 +151,26 @@ export default function MathMode({ onResult }) {
       const p = makeMultiplesProblem(selectedTable)
       setProb(p)
       setOptions(generateOptions(p.result))
+    } else if (subMode === 'word_problems') {
+      // Shuffle all available questions
+      if (wordProblemsData.length > 0) {
+        setShuffledWP(shuffle([...wordProblemsData]))
+        setWpIndex(0)
+      }
     } else {
       // Menu or reset
       setProb(null)
     }
-  }, [subMode, difficulty, selectedTable])
+  }, [subMode, difficulty, selectedTable, wordProblemsData])
+
+  // Initial load for first specific WP logic
+  useEffect(() => {
+    if (subMode === 'word_problems' && shuffledWP.length > 0) {
+      const currentQ = shuffledWP[wpIndex % shuffledWP.length]
+      setProb({ result: currentQ.answer, question: currentQ.question })
+      setOptions(generateOptions(currentQ.answer))
+    }
+  }, [shuffledWP, wpIndex, subMode])
 
   const next = () => {
     if (subMode === 'mix') {
@@ -150,6 +181,9 @@ export default function MathMode({ onResult }) {
       const p = makeMultiplesProblem(selectedTable)
       setProb(p)
       setOptions(generateOptions(p.result))
+    } else if (subMode === 'word_problems') {
+      setWpIndex(prev => prev + 1)
+      // The useEffect will pick up the change in wpIndex
     }
   }
 
@@ -182,6 +216,12 @@ export default function MathMode({ onResult }) {
           >
             לוח הכפל
           </button>
+          <button
+            onClick={() => setSubMode('word_problems')}
+            style={{ padding: '20px 40px', fontSize: '1.5rem', width: '300px' }}
+          >
+            בעיות מילוליות
+          </button>
         </div>
       </div>
     )
@@ -208,10 +248,30 @@ export default function MathMode({ onResult }) {
     )
   }
 
-  // Render: Active Game (Mix or Multiples)
+  // Render: Active Game (Mix or Multiples or Word Problems)
   if (!prob) return <div>Loading...</div>
 
-  const verticalText = formatVertical(prob.a, prob.b, prob.op)
+  // Different format for Word Problems vs Arithmetic
+  let questionTextContent
+  let dir = 'ltr'
+
+  if (subMode === 'word_problems') {
+    dir = 'rtl'
+    questionTextContent = (
+      <div style={{ fontSize: '1.5rem', textAlign: 'center', direction: 'rtl', padding: 10, whiteSpace: 'pre-wrap' }}>
+        {prob.question}
+      </div>
+    )
+  } else {
+    // Vertical arithmetic
+    const verticalText = formatVertical(prob.a, prob.b, prob.op)
+    questionTextContent = (
+      <pre style={{ margin: 0, textAlign: 'right', fontFamily: 'inherit', lineHeight: 1.2 }}>
+        {verticalText}
+      </pre>
+    )
+  }
+
   const correctIndex = options.findIndex((o) => Number(o) === prob.result)
 
   return (
@@ -229,16 +289,15 @@ export default function MathMode({ onResult }) {
         {subMode === 'multiples' && (
           <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>כפולות של {selectedTable}</div>
         )}
+        {subMode === 'word_problems' && (
+          <div style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>בעיות מילוליות</div>
+        )}
       </div>
 
       <QuestionCard
-        direction="ltr"
-        key={`${prob.a}${prob.op}${prob.b}`}
-        text={
-          <pre style={{ margin: 0, textAlign: 'right', fontFamily: 'inherit', lineHeight: 1.2 }}>
-            {verticalText}
-          </pre>
-        }
+        direction={dir}
+        key={subMode === 'word_problems' ? prob.question : `${prob.a}${prob.op}${prob.b}`}
+        text={questionTextContent}
         options={options}
         correctIndex={correctIndex}
         onAnswer={handleAnswer}

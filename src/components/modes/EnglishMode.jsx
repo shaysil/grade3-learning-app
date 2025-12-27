@@ -89,8 +89,18 @@ export default function EnglishMode({ onResult }) {
       const regex = new RegExp(`\\b${word}\\b`, 'gi')
       const blanked = sentence.replace(regex, '______')
 
-      const decorated = q.options.map((text, idx) => ({ text, isCorrect: idx === q.correct }))
-      const shuffled = shuffle(decorated)
+      // Generate options: Correct word + 3 random English words from other questions
+      const distractors = []
+      const available = questions.filter(item => item.word !== word)
+
+      while (distractors.length < 3 && available.length > 0) {
+        const r = Math.floor(Math.random() * available.length)
+        distractors.push(available[r].word)
+        available.splice(r, 1) // prevent duplicates
+      }
+
+      const allOptions = [{ text: word, isCorrect: true }, ...distractors.map(d => ({ text: d, isCorrect: false }))]
+      const shuffled = shuffle(allOptions)
       const correctIdx = shuffled.findIndex(x => x.isCorrect)
 
       return {
@@ -99,9 +109,9 @@ export default function EnglishMode({ onResult }) {
           options: shuffled.map(x => x.text),
           correctIndex: correctIdx,
           inputType: 'options',
-          ttsText: q.word, // Speak word to help user identify what fits
-          ttsSentence: null, // Don't speak sentence (reveals answer too easily?) or maybe we should? User said "hear the appropriate word"
-          hideAudio: false // Allow audio for sentence if available? Let's say yes for context.
+          ttsText: null,
+          ttsSentence: null,
+          hideAudio: true // Removed audio buttons as requested
         },
         correctValue: correctIdx
       }
