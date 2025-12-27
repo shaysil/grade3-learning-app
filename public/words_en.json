@@ -460,5 +460,379 @@
     ],
     "correct": 0,
     "sentence": "I drink water every day."
+  },
+  {
+    "word": "Mix",
+    "options": [
+      "לערבב",
+      "דודה",
+      "לצלם תמונות",
+      "ארון"
+    ],
+    "correct": 0,
+    "sentence": "Mix the colors together."
+  },
+  {
+    "word": "Cut",
+    "options": [
+      "לגזור",
+      "ילד",
+      "מכונית",
+      "תפוז"
+    ],
+    "correct": 0,
+    "sentence": "Cut the paper with scissors."
+  },
+  {
+    "word": "Color",
+    "options": [
+      "לצבוע",
+      "שם של איש בספר",
+      "ללכת",
+      "חלון"
+    ],
+    "correct": 0,
+    "sentence": "Color the picture."
+  },
+  {
+    "word": "On",
+    "options": [
+      "על",
+      "אמא",
+      "שזוף",
+      "אוכל"
+    ],
+    "correct": 0,
+    "sentence": "The book is on the table."
+  },
+  {
+    "word": "Desk",
+    "options": [
+      "שולחן כתיבה",
+      "יש ל...",
+      "לסגור",
+      "לספר סיפור"
+    ],
+    "correct": 0,
+    "sentence": "I sit at my desk."
+  },
+  {
+    "word": "Chair",
+    "options": [
+      "כיסא",
+      "לצלם תמונות",
+      "נסיעה",
+      "בננה"
+    ],
+    "correct": 0,
+    "sentence": "Sit on the chair."
+  },
+  {
+    "word": "Open",
+    "options": [
+      "לפתוח",
+      "לשבת",
+      "ילדה",
+      "לאסור"
+    ],
+    "correct": 0,
+    "sentence": "Open the door please."
+  },
+  {
+    "word": "Close",
+    "options": [
+      "לסגור",
+      "יש ל...",
+      "פטפוט",
+      "חתול"
+    ],
+    "correct": 0,
+    "sentence": "Close the window."
+  },
+  {
+    "word": "Door",
+    "options": [
+      "דלת",
+      "כובע",
+      "לשונית",
+      "לקום"
+    ],
+    "correct": 0,
+    "sentence": "Knock on the door."
+  },
+  {
+    "word": "Board",
+    "options": [
+      "לוח",
+      "לילה",
+      "רכבת",
+      "אמא"
+    ],
+    "correct": 0,
+    "sentence": "Look at the board."
+  },
+  {
+    "word": "Window",
+    "options": [
+      "חלון",
+      "רכבת",
+      "פיל",
+      "לגזור"
+    ],
+    "correct": 0,
+    "sentence": "Look out the window."
+  },
+  {
+    "word": "Bird",
+    "options": [
+      "ציפור",
+      "אבא",
+      "כובע",
+      "לצבוע"
+    ],
+    "correct": 0,
+    "sentence": "The bird can fly."
+  },
+  {
+    "word": "Under",
+    "options": [
+      "מתחת",
+      "לקרוא",
+      "לשחק",
+      "כביש"
+    ],
+    "correct": 0,
+    "sentence": "The ball is under the table."
+  },
+  {
+    "word": "Number",
+    "options": [
+      "מספר",
+      "אחות",
+      "לרקוד",
+      "לצבוע"
+    ],
+    "correct": 0,
+    "sentence": "What is your phone number?"
+  },
+  {
+    "word": "Table",
+    "options": [
+      "שולחן",
+      "לשיר",
+      "אופניים",
+      "בננה"
+    ],
+    "correct": 0,
+    "sentence": "Dinner is on the table."
+  },
+  {
+    "word": "Cat",
+    "options": [
+      "חתול",
+      "מספר",
+      "אמא",
+      "אח"
+    ],
+    "correct": 0,
+    "sentence": "The cat says meow."
+  },
+  {
+    "word": "Outside",
+    "options": [
+      "בחוץ",
+      "תינוק",
+      "חלון",
+      "לקרוא"
+    ],
+    "correct": 0,
+    "sentence": "Let's play outside."
+  },
+  {
+    "word": "Tree",
+    "options": [
+      "עץ",
+      "רמזור",
+      "שולחן כתיבה",
+      "לישון"
+    ],
+    "correct": 0,
+    "sentence": "The bird is in the tree."
+  },
+  {
+    "word": "In",
+    "options": [
+      "בתוך",
+      "לישון",
+      "מסיבה",
+      "מחבת"
+    ],
+    "correct": 0,
+    "sentence": "The toys are in the box."
+  },
+  {
+    "word": "Draw",
+    "options": [
+      "לצייר",
+      "ילד",
+      "לערבב",
+      "גשם"
+    ],
+    "correct": 0,
+    "sentence": "I draw a picture."
+  },
+  {
+    "word": "Read",
+    "options": [
+      "לקרוא",
+      "מתנה",
+      "מסיבה",
+      "אחות"
+    ],
+    "correct": 0,
+    "sentence": "I read a book."
+  },
+  {
+    "word": "Stick",
+    "options": [
+      "להדביק",
+      "לכתוב",
+      "לרקוד",
+      "שזוף"
+    ],
+    "correct": 0,
+    "sentence": "Stick the paper with glue."
+  },
+  {
+    "word": "Write",
+    "options": [
+      "לכתוב",
+      "שינה",
+      "לחם",
+      "שם של איש בספר"
+    ],
+    "correct": 0,
+    "sentence": "Write your name."
+  },
+  {
+    "word": "Tell a story",
+    "options": [
+      "לספר סיפור",
+      "לגזור",
+      "אבא",
+      "חברה"
+    ],
+    "correct": 0,
+    "sentence": "Tell us a story."
+  },
+  {
+    "word": "Library",
+    "options": [
+      "ספרייה",
+      "סבתא",
+      "לפתוח",
+      "לשתות"
+    ],
+    "correct": 0,
+    "sentence": "We read books in the library."
+  },
+  {
+    "word": "Computer",
+    "options": [
+      "מחשב",
+      "חבר",
+      "מסיבה",
+      "לחם"
+    ],
+    "correct": 0,
+    "sentence": "I play games on the computer."
+  },
+  {
+    "word": "Party",
+    "options": [
+      "מסיבה",
+      "אוכל",
+      "ילד",
+      "כובע"
+    ],
+    "correct": 0,
+    "sentence": "Happy birthday party!"
+  },
+  {
+    "word": "Mom",
+    "options": [
+      "אמא",
+      "לכתוב",
+      "עטלף",
+      "כחול"
+    ],
+    "correct": 0,
+    "sentence": "I love my mom."
+  },
+  {
+    "word": "Juice",
+    "options": [
+      "מיץ",
+      "מרק",
+      "אחות",
+      "עץ"
+    ],
+    "correct": 0,
+    "sentence": "I drink orange juice."
+  },
+  {
+    "word": "Orange",
+    "options": [
+      "תפוז",
+      "לצלם תמונות",
+      "דודה",
+      "תג"
+    ],
+    "correct": 0,
+    "sentence": "The orange is sweet."
+  },
+  {
+    "word": "Night",
+    "options": [
+      "לילה",
+      "לצלם תמונות",
+      "כביש",
+      "לערבב"
+    ],
+    "correct": 0,
+    "sentence": "We sleep at night."
+  },
+  {
+    "word": "Has",
+    "options": [
+      "יש ל...",
+      "מורה",
+      "מיטה",
+      "פיל"
+    ],
+    "correct": 0,
+    "sentence": "She has a new bag."
+  },
+  {
+    "word": "Go",
+    "options": [
+      "ללכת",
+      "לכתוב",
+      "דלת",
+      "אוטובוס"
+    ],
+    "correct": 0,
+    "sentence": "Let's go home."
+  },
+  {
+    "word": "Wait",
+    "options": [
+      "לחכות",
+      "רכבת",
+      "אח",
+      "כחול"
+    ],
+    "correct": 0,
+    "sentence": "Wait for the bus."
   }
 ]
