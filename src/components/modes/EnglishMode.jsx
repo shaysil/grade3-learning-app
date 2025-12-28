@@ -173,6 +173,7 @@ export default function EnglishMode({ onResult }) {
       <QuestionCard
         direction="ltr"
         {...displayProps}
+        correctAnswer={correctValue}
         onAnswer={handleAnswer}
         onPlayAudio={handlePlayed}
       />

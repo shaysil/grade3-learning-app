@@ -5,9 +5,28 @@ import React, { useRef, useEffect, useState, useMemo } from 'react'
 // - ttsSentence: string (fallback sentence to speak)
 // - ttsLang: optional language for TTS (default 'en-US')
 // - onPlayAudio: callback(type) called when audio/tts is played (type = 'word'|'sentence')
+// - correctAnswer: string | number (optional, for internal validation)
+// - feedbackMessage: string (optional custom message)
 // ttsLang: optional language for TTS (default 'en-US')
 // inputType: 'options' | 'text' (default 'options')
-export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudio, text, options, correctIndex, onAnswer, ttsText, ttsSentence, ttsLang = 'en-US', onPlayAudio, hideAudio = false, inputType = 'options', instruction }) {
+export default function QuestionCard({
+  direction = 'ltr',
+  audioSrc,
+  sentenceAudio,
+  text,
+  options,
+  correctIndex,
+  onAnswer,
+  ttsText,
+  ttsSentence,
+  ttsLang = 'en-US',
+  onPlayAudio,
+  hideAudio = false,
+  inputType = 'options',
+  instruction,
+  correctAnswer,
+  feedbackMessage = "לא נורא, נסה שוב!"
+}) {
   const audio = useRef(null)
   const sentAudio = useRef(null)
   const wordUtter = useRef(null)
@@ -18,6 +37,10 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
   const [locked, setLocked] = useState(false)
   const [playErrorMsg, setPlayErrorMsg] = useState(null)
   const [textInput, setTextInput] = useState('')
+
+  // Feedback State
+  const [showFeedback, setShowFeedback] = useState(false)
+  const [isWrong, setIsWrong] = useState(false)
 
   const isMounted = useRef(false)
 
@@ -80,6 +103,8 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
     setSelected(null)
     setLocked(false)
     setTextInput('') // Reset input on new question
+    setShowFeedback(false)
+    setIsWrong(false)
 
     if (hideAudio) {
       return
@@ -248,20 +273,68 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
     if (locked) return
     setSelected(i)
     setLocked(true)
-    const correct = i === correctIndex
-    // play feedback sound
-    const s = new Audio(correct ? '/audio/correct.mp3' : '/audio/wrong.mp3')
-    s.play().catch(() => { })
 
-    // small delay for animation
-    setTimeout(() => {
-      onAnswer(i)
-      // If wrong, unlock to allow retry
-      if (!correct) {
-        setSelected(null)
-        setLocked(false)
+    // Check correctness internally
+    const correct = i === correctIndex
+
+    // play sound
+    const s = new Audio(correct ? '/audio/correct.mp3' : '/audio/wrong.mp3')
+
+    // If correct, normal flow (delay then onAnswer)
+    if (correct) {
+      s.play().catch(() => { })
+      setTimeout(() => {
+        onAnswer(i) // Parent moves on
+      }, 700)
+    } else {
+      // If wrong, show feedback and try again
+      s.play().catch(() => { })
+      setIsWrong(true)
+      setShowFeedback(true)
+    }
+  }
+
+  const handleTextSubmit = () => {
+    if (locked || !textInput) return
+    setLocked(true)
+
+    // Validate if correctAnswer prop is present
+    let correct = false
+    if (correctAnswer !== undefined) {
+      if (typeof correctAnswer === 'string') {
+        correct = textInput.trim().toLowerCase() === correctAnswer.trim().toLowerCase()
+      } else {
+        correct = textInput == correctAnswer // loose eq
       }
-    }, 700)
+    } else {
+      // Fallback: assume parent handles it, but since we want to stop progress on wrong...
+      // This is tricky. If parent handles logic in onAnswer, we can't know if it was correct here.
+      // So we MUST pass correctAnswer for text modes to support this feature.
+      console.warn("QuestionCard text input used without correctAnswer prop. Progression cannot be blocked locally.")
+      onAnswer(textInput)
+      return
+    }
+
+    const s = new Audio(correct ? '/audio/correct.mp3' : '/audio/wrong.mp3')
+
+    if (correct) {
+      s.play().catch(() => { })
+      setTimeout(() => {
+        onAnswer(textInput)
+      }, 700)
+    } else {
+      s.play().catch(() => { })
+      setIsWrong(true)
+      setShowFeedback(true)
+    }
+  }
+
+  const resetAfterFeedback = () => {
+    setShowFeedback(false)
+    setIsWrong(false)
+    setLocked(false)
+    setSelected(null)
+    // textInput stays to let them edit it
   }
 
   return (
@@ -299,8 +372,6 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
           </div>
         )}
 
-
-
         {playErrorMsg ? <div className="play-error">{playErrorMsg}</div> : null}
       </div>
 
@@ -328,7 +399,7 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
               onChange={(e) => setTextInput(e.target.value)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && !locked) {
-                  onAnswer(textInput)
+                  handleTextSubmit()
                 }
               }}
               placeholder="הקלד כאן..."
@@ -347,7 +418,7 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
             />
             <button
               className="primary-btn"
-              onClick={() => onAnswer(textInput)}
+              onClick={handleTextSubmit}
               disabled={locked || !textInput}
               style={{
                 padding: '12px 40px',
@@ -365,6 +436,67 @@ export default function QuestionCard({ direction = 'ltr', audioSrc, sentenceAudi
           </div>
         )}
       </div>
+
+      {/* Feedback Overlay */}
+      {showFeedback && (
+        <div
+          className="feedback-overlay"
+          style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            backgroundColor: 'rgba(255,255,255,0.85)',
+            backdropFilter: 'blur(4px)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 100,
+            borderRadius: 'inherit',
+            animation: 'fadeIn 0.3s ease'
+          }}
+        >
+          <div
+            className="feedback-content"
+            style={{
+              background: 'white',
+              padding: '24px',
+              borderRadius: '20px',
+              boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
+              textAlign: 'center',
+              maxWidth: '80%',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              alignItems: 'center',
+              border: '2px solid #ef4444' // red border for wrong
+            }}
+          >
+            <div style={{ fontSize: '3rem' }}>🤔</div>
+            <h3 style={{ margin: 0, color: '#1e293b', fontSize: '1.5rem' }}>
+              {feedbackMessage}
+            </h3>
+            <button
+              onClick={resetAfterFeedback}
+              style={{
+                padding: '12px 32px',
+                fontSize: '1.1rem',
+                backgroundColor: '#3b82f6',
+                color: 'white',
+                border: 'none',
+                borderRadius: '12px',
+                cursor: 'pointer',
+                fontWeight: '600',
+                transition: 'transform 0.1s'
+              }}
+            >
+              נסה שוב
+            </button>
+          </div>
+          <style>{`
+            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+          `}</style>
+        </div>
+      )}
     </div>
   )
 }
