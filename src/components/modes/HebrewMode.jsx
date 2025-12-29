@@ -97,7 +97,7 @@ export default function HebrewMode({ words, onResult }) {
         direction="rtl"
         audioSrc={current.audio_url}
         sentenceAudio={current.sentence_audio_url}
-        text={current.text}
+        text="🔊" // Show icon instead of word
         options={finalOptions}
         correctIndex={finalCorrectIndex}
         onAnswer={handleAnswer}
